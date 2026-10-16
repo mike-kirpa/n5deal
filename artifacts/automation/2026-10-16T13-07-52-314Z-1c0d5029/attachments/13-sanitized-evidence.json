@@ -1,0 +1,79 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "1d8fcb1d-d59b-4316-91a9-f0e128accf7a",
+        "name": "qa-auto-2026-10-16T13-07-52-314Z-1c0d5029-1fef71c5",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T13:09:10.537Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "size must be an integer number"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "check": "metadata size validation only; no storage PUT or completion",
+      "declaredSize": 1.5,
+      "status": 400
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=1d8fcb1d-d59b-4316-91a9-f0e128accf7a&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/1d8fcb1d-d59b-4316-91a9-f0e128accf7a",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/1d8fcb1d-d59b-4316-91a9-f0e128accf7a/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "1d8fcb1d-d59b-4316-91a9-f0e128accf7a",
+    "filesVerifiedAbsent": 0
+  }
+}

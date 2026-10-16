@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 401,
+      "body": {
+        "message": "Invalid email or password",
+        "error": "Unauthorized",
+        "statusCode": 401
+      }
+    }
+  ]
+}

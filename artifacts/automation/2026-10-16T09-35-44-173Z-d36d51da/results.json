@@ -1,0 +1,233 @@
+{
+  "runId": "2026-10-16T09-35-44-173Z-d36d51da",
+  "endedAt": "2026-10-16T09:37:39.328Z",
+  "runnerStatus": "passed",
+  "effectiveStatus": "passed",
+  "counts": {
+    "passed": 13
+  },
+  "globalErrors": [],
+  "tests": [
+    {
+      "title": "both documented accounts authenticate and resolve their own identity",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 839,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "not-needed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\1-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "invalid credentials return an actionable 401",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 197,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "not-needed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\2-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "missing and invalid tokens cannot access protected assessment resources",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1947,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\3-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "nested folders retain hierarchy, validate names and delete recursively",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 5353,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\4-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "pending files stay invisible and invalid declared uploads are rejected",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 3594,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\5-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "PDF lifecycle preserves bytes, resolves conflicts, moves and deletes metadata",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 14224,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\6-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "cursor pagination crosses the folder/file seam exactly once per item",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 9644,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\7-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "folder grants inherit downwards without exposing ancestors or permitting writes",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 11077,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\8-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "file mutation denial, overlapping grants and moves use current inheritance",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 17462,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\9-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "public tokens are read-only subtree capabilities and fresh access stops on revoke",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 12119,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\10-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "Owner logs in, creates a folder, uploads and opens a PDF, then downloads it",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 12752,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\11-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "Owner shares in the UI; an independent Viewer context browses read-only descendants",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 18533,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\12-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "Logout removes the session; switching to Viewer does not reuse Owner content or permissions",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 5697,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T09-35-44-173Z-d36d51da\\attachments\\13-sanitized-evidence.json"
+        }
+      ]
+    }
+  ]
+}

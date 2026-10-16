@@ -1,0 +1,163 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "ddb948b0-898c-416e-9e3c-f7f217d6c484",
+        "name": "qa-auto-2026-10-16T13-07-52-314Z-1c0d5029-3c5dbdf0",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T13:11:43.739Z"
+      }
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/ddb948b0-898c-416e-9e3c-f7f217d6c484/breadcrumbs",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/ddb948b0-898c-416e-9e3c-f7f217d6c484/contents",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201
+    },
+    {
+      "consoleError": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)"
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/files/74bd88ae-0f7a-4e72-9474-43b868950abc/complete",
+      "status": 201
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/ddb948b0-898c-416e-9e3c-f7f217d6c484/contents",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/files/587c9c9f-46a3-46f9-bd97-fc0157b4d392/complete",
+      "status": 201
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/ddb948b0-898c-416e-9e3c-f7f217d6c484/contents",
+      "status": 200
+    },
+    {
+      "check": "Two-file batch; browser-local failure before storage acceptance, not BUG-001 completion failure",
+      "failedFileRetried": true,
+      "unaffectedFilePublished": true,
+      "progressAtCompletionGate": 100
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=ddb948b0-898c-416e-9e3c-f7f217d6c484&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=587c9c9f-46a3-46f9-bd97-fc0157b4d392&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=74bd88ae-0f7a-4e72-9474-43b868950abc&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/ddb948b0-898c-416e-9e3c-f7f217d6c484",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/ddb948b0-898c-416e-9e3c-f7f217d6c484/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/587c9c9f-46a3-46f9-bd97-fc0157b4d392",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/74bd88ae-0f7a-4e72-9474-43b868950abc",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "ddb948b0-898c-416e-9e3c-f7f217d6c484",
+    "filesVerifiedAbsent": 2
+  }
+}

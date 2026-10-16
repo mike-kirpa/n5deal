@@ -1,0 +1,302 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "2550a1ac-a642-46a7-bd04-fcbac5207e55",
+        "name": "qa-auto-2026-10-16T09-37-58-788Z-749df03b-e4f5bec2",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T09:38:28.424Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "f92d2982-3579-4673-9ba2-4e04daaa766a",
+        "name": "Keyboard destination",
+        "parentId": "2550a1ac-a642-46a7-bd04-fcbac5207e55",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T09:38:29.030Z"
+      }
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/2550a1ac-a642-46a7-bd04-fcbac5207e55/breadcrumbs",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/2550a1ac-a642-46a7-bd04-fcbac5207e55/contents",
+      "status": 200
+    },
+    {
+      "observation": "Real Tab/Enter traversal; no mouse click or direct folder navigation",
+      "semantics": {
+        "tag": "TR",
+        "tabIndex": -1,
+        "role": null,
+        "links": 0
+      },
+      "visited": [
+        {
+          "inside": false,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Share"
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Actions for Keyboard destination"
+        },
+        {
+          "inside": false,
+          "tag": "SPAN",
+          "role": null,
+          "name": ""
+        },
+        {
+          "inside": false,
+          "tag": "BODY",
+          "role": null,
+          "name": "Data RoomMy data roomsShared with meJohn DoeSign outMy Data Roomqa-auto-2026-10-16T09-37-58-788Z-749"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "Data Room"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "My data rooms"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "Shared with me"
+        },
+        {
+          "inside": false,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Sign out"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "My Data Room"
+        },
+        {
+          "inside": false,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Upload"
+        },
+        {
+          "inside": false,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "New folder"
+        },
+        {
+          "inside": false,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Share"
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Actions for Keyboard destination"
+        },
+        {
+          "inside": false,
+          "tag": "SPAN",
+          "role": null,
+          "name": ""
+        },
+        {
+          "inside": false,
+          "tag": "BODY",
+          "role": null,
+          "name": "Data RoomMy data roomsShared with meJohn DoeSign outMy Data Roomqa-auto-2026-10-16T09-37-58-788Z-749"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "Data Room"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "My data rooms"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "Shared with me"
+        },
+        {
+          "inside": false,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Sign out"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "My Data Room"
+        },
+        {
+          "inside": false,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Upload"
+        },
+        {
+          "inside": false,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "New folder"
+        },
+        {
+          "inside": false,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Share"
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Actions for Keyboard destination"
+        },
+        {
+          "inside": false,
+          "tag": "SPAN",
+          "role": null,
+          "name": ""
+        },
+        {
+          "inside": false,
+          "tag": "BODY",
+          "role": null,
+          "name": "Data RoomMy data roomsShared with meJohn DoeSign outMy Data Roomqa-auto-2026-10-16T09-37-58-788Z-749"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "Data Room"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "My data rooms"
+        },
+        {
+          "inside": false,
+          "tag": "A",
+          "role": null,
+          "name": "Shared with me"
+        },
+        {
+          "inside": false,
+          "tag": "BUTTON",
+          "role": null,
+          "name": "Sign out"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=2550a1ac-a642-46a7-bd04-fcbac5207e55&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=f92d2982-3579-4673-9ba2-4e04daaa766a&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/2550a1ac-a642-46a7-bd04-fcbac5207e55",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/2550a1ac-a642-46a7-bd04-fcbac5207e55/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/f92d2982-3579-4673-9ba2-4e04daaa766a/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "2550a1ac-a642-46a7-bd04-fcbac5207e55",
+    "filesVerifiedAbsent": 0
+  }
+}

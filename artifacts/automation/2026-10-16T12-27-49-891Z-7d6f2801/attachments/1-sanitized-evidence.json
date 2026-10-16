@@ -1,0 +1,340 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "4c9a4800-de72-4d67-b78f-be56d5283478",
+        "name": "qa-auto-2026-10-16T12-27-49-891Z-7d6f2801-a9cfd9f4",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:27:51.263Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "c6c6b87b-6db6-47b3-a686-cdae508c3b89",
+        "name": "Revocable documents",
+        "parentId": "4c9a4800-de72-4d67-b78f-be56d5283478",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:27:51.636Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/4c9a4800-de72-4d67-b78f-be56d5283478/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "folder",
+            "id": "c6c6b87b-6db6-47b3-a686-cdae508c3b89",
+            "name": "Revocable documents",
+            "parentId": "4c9a4800-de72-4d67-b78f-be56d5283478",
+            "createdAt": "2026-10-16T12:27:51.636Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "observation": "client upload header observed; probe PUT cancelled locally",
+      "visibleProbeFiles": 0
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "ef400c05-bedb-4a67-9457-1712b4c614a8",
+        "name": "revocation.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL omitted]",
+      "status": 200,
+      "byteCount": 590
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8/complete",
+      "status": 201,
+      "body": {
+        "id": "ef400c05-bedb-4a67-9457-1712b4c614a8",
+        "name": "revocation.pdf",
+        "folderId": "c6c6b87b-6db6-47b3-a686-cdae508c3b89"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "56d84952-b3d9-4248-85bb-c9fb767fbf76",
+        "resourceType": "FOLDER",
+        "resourceId": "c6c6b87b-6db6-47b3-a686-cdae508c3b89",
+        "mode": "USER",
+        "token": "[REDACTED]",
+        "granteeEmail": "viewer@example.com",
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-16T12:27:56.039Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8",
+      "status": 200,
+      "body": {
+        "id": "ef400c05-bedb-4a67-9457-1712b4c614a8",
+        "name": "revocation.pdf",
+        "size": 590,
+        "mimeType": "application/pdf",
+        "folderId": "c6c6b87b-6db6-47b3-a686-cdae508c3b89",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8/view-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8/view-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "[signed content URL omitted]",
+      "status": 200
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/56d84952-b3d9-4248-85bb-c9fb767fbf76",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8/view-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8/download-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8",
+      "status": 200,
+      "body": {
+        "id": "ef400c05-bedb-4a67-9457-1712b4c614a8",
+        "name": "revocation.pdf",
+        "size": 590,
+        "mimeType": "application/pdf",
+        "folderId": "c6c6b87b-6db6-47b3-a686-cdae508c3b89",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8/view-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=c6c6b87b-6db6-47b3-a686-cdae508c3b89",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "[signed content URL omitted]",
+      "status": 200
+    },
+    {
+      "observation": "Old signed view URL after USER revocation; not a fresh authorization bypass",
+      "status": 200,
+      "returnsOriginalBytes": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=4c9a4800-de72-4d67-b78f-be56d5283478&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=c6c6b87b-6db6-47b3-a686-cdae508c3b89&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=f2c817df-504c-4932-adf7-8e91c4239537&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=ef400c05-bedb-4a67-9457-1712b4c614a8&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/4c9a4800-de72-4d67-b78f-be56d5283478",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/4c9a4800-de72-4d67-b78f-be56d5283478/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/c6c6b87b-6db6-47b3-a686-cdae508c3b89/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/f2c817df-504c-4932-adf7-8e91c4239537",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef400c05-bedb-4a67-9457-1712b4c614a8",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "4c9a4800-de72-4d67-b78f-be56d5283478",
+    "filesVerifiedAbsent": 2
+  }
+}

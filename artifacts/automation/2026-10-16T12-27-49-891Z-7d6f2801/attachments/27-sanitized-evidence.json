@@ -1,0 +1,308 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "6ed9f236-59de-4745-88a0-c067d1bb2dcc",
+        "name": "qa-auto-2026-10-16T12-27-49-891Z-7d6f2801-1489dc90",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:30:39.983Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/6ed9f236-59de-4745-88a0-c067d1bb2dcc/contents",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "observation": "client upload header observed; probe PUT cancelled locally",
+      "visibleProbeFiles": 0
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "6a0d0d80-1003-4327-a756-95fee4be2383",
+        "name": "opened-document.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL omitted]",
+      "status": 200,
+      "byteCount": 596
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383/complete",
+      "status": 201,
+      "body": {
+        "id": "6a0d0d80-1003-4327-a756-95fee4be2383",
+        "name": "opened-document.pdf",
+        "folderId": "6ed9f236-59de-4745-88a0-c067d1bb2dcc"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "f1301095-ed1b-4bfe-bcf3-2b3dc92b6856",
+        "resourceType": "FILE",
+        "resourceId": "6a0d0d80-1003-4327-a756-95fee4be2383",
+        "mode": "USER",
+        "token": "[REDACTED]",
+        "granteeEmail": "viewer@example.com",
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-16T12:30:44.854Z"
+      }
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/6ed9f236-59de-4745-88a0-c067d1bb2dcc/breadcrumbs",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/6ed9f236-59de-4745-88a0-c067d1bb2dcc/contents",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/data-rooms/05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+      "status": 404
+    },
+    {
+      "consoleError": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383/view-url",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "endpoint": "[signed content URL omitted]",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/f1301095-ed1b-4bfe-bcf3-2b3dc92b6856",
+      "status": 204,
+      "body": null
+    },
+    {
+      "observation": "Already-open document immediately after revoke; object presence is not proof of rendered pages",
+      "pdfObjectVisible": true
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383/download-url",
+      "status": 404
+    },
+    {
+      "consoleError": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383",
+      "status": 404
+    },
+    {
+      "consoleError": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383/view-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383/download-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383",
+      "status": 200,
+      "body": {
+        "id": "6a0d0d80-1003-4327-a756-95fee4be2383",
+        "name": "opened-document.pdf",
+        "size": 596,
+        "mimeType": "application/pdf",
+        "folderId": "6ed9f236-59de-4745-88a0-c067d1bb2dcc",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383/view-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "observation": "Fresh browser issuance after revoke",
+      "issuance": [
+        {
+          "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383/download-url",
+          "status": 404
+        }
+      ],
+      "feedback": "File not found after reload"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=6ed9f236-59de-4745-88a0-c067d1bb2dcc&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=49102ceb-18f8-48fd-beda-193497743200&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=6a0d0d80-1003-4327-a756-95fee4be2383&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/6ed9f236-59de-4745-88a0-c067d1bb2dcc",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/6ed9f236-59de-4745-88a0-c067d1bb2dcc/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/49102ceb-18f8-48fd-beda-193497743200",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6a0d0d80-1003-4327-a756-95fee4be2383",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "6ed9f236-59de-4745-88a0-c067d1bb2dcc",
+    "filesVerifiedAbsent": 2
+  }
+}

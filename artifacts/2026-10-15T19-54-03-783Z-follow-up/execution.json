@@ -1,0 +1,163 @@
+{
+  "runId": "2026-10-15T19-54-03-783Z-follow-up",
+  "startedAt": "2026-10-15T19:54:03.783Z",
+  "updatedAt": "2026-10-15T19:55:18.161Z",
+  "checks": [
+    {
+      "id": "FOLLOW-01",
+      "title": "Drag-and-drop valid PDF publishes uploaded document",
+      "status": "failed",
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Drop PDF files to upload', { exact: true }) to be visible\u001b[22m\n",
+      "durationMs": 10339
+    },
+    {
+      "id": "FOLLOW-02",
+      "title": "Zero-byte browser PDF shows API validation error",
+      "status": "passed",
+      "durationMs": 159
+    },
+    {
+      "id": "FOLLOW-03",
+      "title": "Single-file public link opens PDF and cannot read sibling file",
+      "status": "failed",
+      "error": "Uploaded PDF prerequisite",
+      "durationMs": 0
+    },
+    {
+      "id": "FOLLOW-04",
+      "title": "Session verification 5xx offers retry and recovers",
+      "status": "failed",
+      "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('cell', { name: 'drag-drop.pdf', exact: true }) to be visible\u001b[22m\n",
+      "durationMs": 30466
+    },
+    {
+      "id": "FOLLOW-05",
+      "title": "Fresh public access revoked while pre-issued URL remains temporarily usable",
+      "status": "failed",
+      "error": "Cannot read properties of undefined (reading 'id')",
+      "durationMs": 2
+    },
+    {
+      "id": "FOLLOW-06",
+      "title": "Keyboard public Download does not also open file row",
+      "status": "failed",
+      "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download drag-drop.pdf', exact: true }) to be visible\u001b[22m\n",
+      "durationMs": 30813
+    },
+    {
+      "id": "FOLLOW-CLEANUP",
+      "title": "Follow-up shares and all PDF/pending metadata cleaned up",
+      "status": "passed",
+      "durationMs": 1052
+    }
+  ],
+  "http": [
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "7a8361e0-7c58-45a8-8103-e15191c12772",
+        "name": "qa-follow-up-2026-10-15T19-54-03-783Z-follow-up",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:54:06.139Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/7a8361e0-7c58-45a8-8103-e15191c12772/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/7a8361e0-7c58-45a8-8103-e15191c12772/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "2dbda7c7-e5ec-4718-8355-dc7ab7240ee4",
+        "resourceType": "FOLDER",
+        "resourceId": "7a8361e0-7c58-45a8-8103-e15191c12772",
+        "mode": "PUBLIC_LINK",
+        "token": "[REDACTED]",
+        "granteeEmail": null,
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:54:47.816Z"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/2dbda7c7-e5ec-4718-8355-dc7ab7240ee4",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/7a8361e0-7c58-45a8-8103-e15191c12772",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/7a8361e0-7c58-45a8-8103-e15191c12772/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "consoleEvents": [
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 400 ()"
+    }
+  ]
+}

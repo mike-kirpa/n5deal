@@ -1,0 +1,219 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "914a74fa-d5d0-4119-878c-886de94682d6",
+        "name": "qa-auto-2026-10-16T12-27-49-891Z-7d6f2801-a1301df1",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:29:29.559Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "38a1dae1-ea2c-4e06-8a90-f1cef91dc36c",
+        "name": "Parent",
+        "parentId": "914a74fa-d5d0-4119-878c-886de94682d6",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:29:29.939Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "9b431678-762a-4d87-929c-f8fbcf2df24e",
+        "name": "Child",
+        "parentId": "38a1dae1-ea2c-4e06-8a90-f1cef91dc36c",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:29:30.311Z"
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/folders/9b431678-762a-4d87-929c-f8fbcf2df24e",
+      "status": 200,
+      "body": {
+        "id": "9b431678-762a-4d87-929c-f8fbcf2df24e",
+        "name": "Renamed",
+        "parentId": "38a1dae1-ea2c-4e06-8a90-f1cef91dc36c",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:29:30.311Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 409,
+      "body": {
+        "message": "A folder named \"RENAMED\" already exists here",
+        "error": "Conflict",
+        "statusCode": 409
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/folders/9b431678-762a-4d87-929c-f8fbcf2df24e",
+      "status": 400,
+      "body": {
+        "message": [
+          "Enter a folder name"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/9b431678-762a-4d87-929c-f8fbcf2df24e/breadcrumbs",
+      "status": 200,
+      "body": {
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "dataRoomName": "My Data Room",
+        "folders": [
+          {
+            "id": "914a74fa-d5d0-4119-878c-886de94682d6",
+            "name": "qa-auto-2026-10-16T12-27-49-891Z-7d6f2801-a1301df1"
+          },
+          {
+            "id": "38a1dae1-ea2c-4e06-8a90-f1cef91dc36c",
+            "name": "Parent"
+          },
+          {
+            "id": "9b431678-762a-4d87-929c-f8fbcf2df24e",
+            "name": "Renamed"
+          }
+        ],
+        "accessLevel": "OWNER"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/38a1dae1-ea2c-4e06-8a90-f1cef91dc36c/delete-preview",
+      "status": 200,
+      "body": {
+        "folderCount": 1,
+        "fileCount": 0,
+        "totalSize": 0
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/38a1dae1-ea2c-4e06-8a90-f1cef91dc36c",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/9b431678-762a-4d87-929c-f8fbcf2df24e/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/914a74fa-d5d0-4119-878c-886de94682d6/contents",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=914a74fa-d5d0-4119-878c-886de94682d6&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=38a1dae1-ea2c-4e06-8a90-f1cef91dc36c&limit=100",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=9b431678-762a-4d87-929c-f8fbcf2df24e&limit=100",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/914a74fa-d5d0-4119-878c-886de94682d6",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/914a74fa-d5d0-4119-878c-886de94682d6/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/38a1dae1-ea2c-4e06-8a90-f1cef91dc36c/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/9b431678-762a-4d87-929c-f8fbcf2df24e/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "914a74fa-d5d0-4119-878c-886de94682d6",
+    "filesVerifiedAbsent": 0
+  }
+}

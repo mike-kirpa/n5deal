@@ -1,0 +1,279 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "f56792b5-a714-4897-a4bd-8ffd4365d4a8",
+        "name": "qa-auto-2026-10-16T12-27-49-891Z-7d6f2801-322af6e1",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:29:50.846Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "237a2179-e21c-4f04-a87f-4a0c6ab4626b",
+        "name": "A",
+        "parentId": "f56792b5-a714-4897-a4bd-8ffd4365d4a8",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:29:51.214Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "ec3c3fd2-6b77-4135-9884-b0032ada0309",
+        "name": "B",
+        "parentId": "f56792b5-a714-4897-a4bd-8ffd4365d4a8",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:29:51.590Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/f56792b5-a714-4897-a4bd-8ffd4365d4a8/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "folder",
+            "id": "237a2179-e21c-4f04-a87f-4a0c6ab4626b",
+            "name": "A",
+            "parentId": "f56792b5-a714-4897-a4bd-8ffd4365d4a8",
+            "createdAt": "2026-10-16T12:29:51.214Z"
+          },
+          {
+            "type": "folder",
+            "id": "ec3c3fd2-6b77-4135-9884-b0032ada0309",
+            "name": "B",
+            "parentId": "f56792b5-a714-4897-a4bd-8ffd4365d4a8",
+            "createdAt": "2026-10-16T12:29:51.590Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "observation": "client upload header observed; probe PUT cancelled locally",
+      "visibleProbeFiles": 0
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "83fc4e4f-0d18-441e-97cc-bd2a6d2342b7",
+        "name": "seam.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL omitted]",
+      "status": 200,
+      "byteCount": 598
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/83fc4e4f-0d18-441e-97cc-bd2a6d2342b7/complete",
+      "status": 201,
+      "body": {
+        "id": "83fc4e4f-0d18-441e-97cc-bd2a6d2342b7",
+        "name": "seam.pdf",
+        "folderId": "f56792b5-a714-4897-a4bd-8ffd4365d4a8"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/f56792b5-a714-4897-a4bd-8ffd4365d4a8/contents?limit=1",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "folder",
+            "id": "237a2179-e21c-4f04-a87f-4a0c6ab4626b",
+            "name": "A",
+            "parentId": "f56792b5-a714-4897-a4bd-8ffd4365d4a8",
+            "createdAt": "2026-10-16T12:29:51.214Z"
+          }
+        ],
+        "nextCursor": "eyJ0IjoiZm9sZGVyIiwibiI6ImEiLCJpIjoiMjM3YTIxNzktZTIxYy00ZjA0LWE4N2YtNGEwYzZhYjQ2MjZiIn0"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/f56792b5-a714-4897-a4bd-8ffd4365d4a8/contents?limit=1&cursor=eyJ0IjoiZm9sZGVyIiwibiI6ImEiLCJpIjoiMjM3YTIxNzktZTIxYy00ZjA0LWE4N2YtNGEwYzZhYjQ2MjZiIn0",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "folder",
+            "id": "ec3c3fd2-6b77-4135-9884-b0032ada0309",
+            "name": "B",
+            "parentId": "f56792b5-a714-4897-a4bd-8ffd4365d4a8",
+            "createdAt": "2026-10-16T12:29:51.590Z"
+          }
+        ],
+        "nextCursor": "eyJ0IjoiZm9sZGVyIiwibiI6ImIiLCJpIjoiZWMzYzNmZDItNmI3Ny00MTM1LTk4ODQtYjAwMzJhZGEwMzA5In0"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/f56792b5-a714-4897-a4bd-8ffd4365d4a8/contents?limit=1&cursor=eyJ0IjoiZm9sZGVyIiwibiI6ImIiLCJpIjoiZWMzYzNmZDItNmI3Ny00MTM1LTk4ODQtYjAwMzJhZGEwMzA5In0",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "file",
+            "id": "83fc4e4f-0d18-441e-97cc-bd2a6d2342b7",
+            "name": "seam.pdf",
+            "folderId": "f56792b5-a714-4897-a4bd-8ffd4365d4a8",
+            "size": 598,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-16T12:29:54.469Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/f56792b5-a714-4897-a4bd-8ffd4365d4a8/contents?cursor=invalid",
+      "status": 400,
+      "body": {
+        "message": "Invalid pagination cursor",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=f56792b5-a714-4897-a4bd-8ffd4365d4a8&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=237a2179-e21c-4f04-a87f-4a0c6ab4626b&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=ec3c3fd2-6b77-4135-9884-b0032ada0309&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=e52d5a65-247a-40b6-87d3-1c7de7ce104a&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=83fc4e4f-0d18-441e-97cc-bd2a6d2342b7&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/f56792b5-a714-4897-a4bd-8ffd4365d4a8",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/f56792b5-a714-4897-a4bd-8ffd4365d4a8/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/237a2179-e21c-4f04-a87f-4a0c6ab4626b/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/ec3c3fd2-6b77-4135-9884-b0032ada0309/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/e52d5a65-247a-40b6-87d3-1c7de7ce104a",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/83fc4e4f-0d18-441e-97cc-bd2a6d2342b7",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "f56792b5-a714-4897-a4bd-8ffd4365d4a8",
+    "filesVerifiedAbsent": 2
+  }
+}

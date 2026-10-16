@@ -1,0 +1,166 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "0664eeff-cf9c-44ee-99ae-b010175ef632",
+        "name": "qa-auto-2026-10-16T13-07-52-314Z-1c0d5029-25881c7e",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T13:09:36.475Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "086caf46-d7a9-4d98-840d-490eea6b36b1",
+        "name": "pending.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/0664eeff-cf9c-44ee-99ae-b010175ef632/contents",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/086caf46-d7a9-4d98-840d-490eea6b36b1",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/086caf46-d7a9-4d98-840d-490eea6b36b1/view-url",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/086caf46-d7a9-4d98-840d-490eea6b36b1/download-url",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "size must not be less than 1"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "File exceeds the 50 MB limit"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "Only PDF files are supported"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=0664eeff-cf9c-44ee-99ae-b010175ef632&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=086caf46-d7a9-4d98-840d-490eea6b36b1&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/0664eeff-cf9c-44ee-99ae-b010175ef632",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/0664eeff-cf9c-44ee-99ae-b010175ef632/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/086caf46-d7a9-4d98-840d-490eea6b36b1",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "0664eeff-cf9c-44ee-99ae-b010175ef632",
+    "filesVerifiedAbsent": 1
+  }
+}

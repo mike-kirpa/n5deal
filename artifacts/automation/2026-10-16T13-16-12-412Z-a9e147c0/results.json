@@ -1,0 +1,80 @@
+{
+  "runId": "2026-10-16T13-16-12-412Z-a9e147c0",
+  "endedAt": "2026-10-16T13:16:39.581Z",
+  "runnerStatus": "passed",
+  "effectiveStatus": "passed",
+  "counts": {
+    "passed": 4
+  },
+  "globalErrors": [],
+  "tests": [
+    {
+      "title": "characterize non-PDF filename extension separately from declared PDF MIME",
+      "project": "characterization",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2891,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T13-16-12-412Z-a9e147c0\\attachments\\1-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "characterize actual content: non-PDF bytes with PDF name and MIME",
+      "project": "characterization",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 8588,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T13-16-12-412Z-a9e147c0\\attachments\\2-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "characterize actual content: corrupted PDF with PDF name and MIME",
+      "project": "characterization",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 8581,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T13-16-12-412Z-a9e147c0\\attachments\\3-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "characterize browser extension policy with a valid PDF and declared PDF MIME",
+      "project": "characterization",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 6399,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T13-16-12-412Z-a9e147c0\\attachments\\4-sanitized-evidence.json"
+        }
+      ]
+    }
+  ]
+}

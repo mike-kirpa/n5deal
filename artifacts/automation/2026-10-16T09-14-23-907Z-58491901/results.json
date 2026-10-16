@@ -1,0 +1,172 @@
+{
+  "runId": "2026-10-16T09-14-23-907Z-58491901",
+  "endedAt": "2026-10-16T09:15:39.832Z",
+  "runnerStatus": "passed",
+  "effectiveStatus": "passed",
+  "counts": {
+    "passed": 10
+  },
+  "globalErrors": [],
+  "tests": [
+    {
+      "title": "both documented accounts authenticate and resolve their own identity",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 791,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "not-needed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "invalid credentials return an actionable 401",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 198,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "not-needed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "missing and invalid tokens cannot access protected assessment resources",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1988,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "nested folders retain hierarchy, validate names and delete recursively",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 5189,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "pending files stay invisible and invalid declared uploads are rejected",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 3436,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "PDF lifecycle preserves bytes, resolves conflicts, moves and deletes metadata",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 13283,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "cursor pagination crosses the folder/file seam exactly once per item",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 9302,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "folder grants inherit downwards without exposing ancestors or permitting writes",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 10823,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "file mutation denial, overlapping grants and moves use current inheritance",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 17371,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "public tokens are read-only subtree capabilities and fresh access stops on revoke",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 12799,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    }
+  ]
+}

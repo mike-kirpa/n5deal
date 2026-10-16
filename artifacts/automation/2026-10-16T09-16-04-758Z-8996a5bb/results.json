@@ -1,0 +1,60 @@
+{
+  "runId": "2026-10-16T09-16-04-758Z-8996a5bb",
+  "endedAt": "2026-10-16T09:16:40.510Z",
+  "runnerStatus": "passed",
+  "effectiveStatus": "passed",
+  "counts": {
+    "passed": 3
+  },
+  "globalErrors": [],
+  "tests": [
+    {
+      "title": "Owner logs in, creates a folder, uploads and opens a PDF, then downloads it",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 12892,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "Owner shares in the UI; an independent Viewer context browses read-only descendants",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 16803,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "Logout removes the session; switching to Viewer does not reuse Owner content or permissions",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 5369,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    }
+  ]
+}

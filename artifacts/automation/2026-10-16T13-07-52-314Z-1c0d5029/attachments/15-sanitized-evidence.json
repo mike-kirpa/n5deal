@@ -1,0 +1,79 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "d15e61c4-2b20-40af-b8e5-5dc334ddfbf7",
+        "name": "qa-auto-2026-10-16T13-07-52-314Z-1c0d5029-11723b40",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T13:09:13.022Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "Only PDF files are supported"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "check": "declared MIME validation, not content inspection",
+      "declaredMime": "image/png",
+      "status": 400
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=d15e61c4-2b20-40af-b8e5-5dc334ddfbf7&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/d15e61c4-2b20-40af-b8e5-5dc334ddfbf7",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/d15e61c4-2b20-40af-b8e5-5dc334ddfbf7/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "d15e61c4-2b20-40af-b8e5-5dc334ddfbf7",
+    "filesVerifiedAbsent": 0
+  }
+}

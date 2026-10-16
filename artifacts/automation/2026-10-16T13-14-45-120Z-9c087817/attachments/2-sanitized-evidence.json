@@ -1,0 +1,125 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "cef8ec4b-d168-4d2c-acb7-6381750a680e",
+        "name": "qa-auto-2026-10-16T13-14-45-120Z-9c087817-74475f78",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T13:14:50.668Z"
+      }
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/cef8ec4b-d168-4d2c-acb7-6381750a680e/breadcrumbs",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/cef8ec4b-d168-4d2c-acb7-6381750a680e/contents",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/files/d2e71c38-87ac-40fb-ad34-589dcb13c79c/complete",
+      "status": 500
+    },
+    {
+      "consoleError": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "consoleError": "Failed to load resource: the server responded with a status of 400 ()"
+    },
+    {
+      "observation": "Retry after one client-local completion failure",
+      "storagePutStatuses": [
+        200,
+        400
+      ],
+      "completionRequests": 1
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=cef8ec4b-d168-4d2c-acb7-6381750a680e&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=d2e71c38-87ac-40fb-ad34-589dcb13c79c&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/cef8ec4b-d168-4d2c-acb7-6381750a680e",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/cef8ec4b-d168-4d2c-acb7-6381750a680e/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/d2e71c38-87ac-40fb-ad34-589dcb13c79c",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "cef8ec4b-d168-4d2c-acb7-6381750a680e",
+    "filesVerifiedAbsent": 1
+  }
+}

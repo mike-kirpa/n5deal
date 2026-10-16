@@ -1,0 +1,183 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "b41397ce-e3ef-4301-b9b2-c652a49c947c",
+        "name": "qa-auto-2026-10-16T12-27-49-891Z-7d6f2801-69057db3",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:29:07.808Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "78a35527-4643-49e5-bdb6-f4a3e6145472",
+        "name": "corrupted.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b41397ce-e3ef-4301-b9b2-c652a49c947c/contents",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "observation": "client upload header observed; probe PUT cancelled locally",
+      "visibleProbeFiles": 0
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL omitted]",
+      "status": 200,
+      "byteCount": 40
+    },
+    {
+      "observation": "Small synthetic content-policy probe; acceptance is not proof of valid PDF content",
+      "candidate": "corrupted PDF",
+      "byteCount": 40,
+      "storageStatus": 200
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/78a35527-4643-49e5-bdb6-f4a3e6145472/complete",
+      "status": 201,
+      "body": {
+        "id": "78a35527-4643-49e5-bdb6-f4a3e6145472",
+        "name": "corrupted.pdf",
+        "folderId": "b41397ce-e3ef-4301-b9b2-c652a49c947c"
+      }
+    },
+    {
+      "observation": "Actual content completion",
+      "candidate": "corrupted PDF",
+      "completionStatus": 201,
+      "published": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/78a35527-4643-49e5-bdb6-f4a3e6145472",
+      "status": 200,
+      "body": {
+        "id": "78a35527-4643-49e5-bdb6-f4a3e6145472",
+        "name": "corrupted.pdf",
+        "size": 40,
+        "mimeType": "application/pdf",
+        "folderId": "b41397ce-e3ef-4301-b9b2-c652a49c947c",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/78a35527-4643-49e5-bdb6-f4a3e6145472/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "[signed content URL omitted]",
+      "status": 200
+    },
+    {
+      "observation": "Content accepted unchanged; requirement/impact review needed, not automatically a defect",
+      "candidate": "corrupted PDF",
+      "actualSize": 40,
+      "declaredMime": "application/pdf"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=b41397ce-e3ef-4301-b9b2-c652a49c947c&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=78a35527-4643-49e5-bdb6-f4a3e6145472&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=53a65e3d-010d-4d61-8581-ee9611c6bd83&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/b41397ce-e3ef-4301-b9b2-c652a49c947c",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b41397ce-e3ef-4301-b9b2-c652a49c947c/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/78a35527-4643-49e5-bdb6-f4a3e6145472",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/53a65e3d-010d-4d61-8581-ee9611c6bd83",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "b41397ce-e3ef-4301-b9b2-c652a49c947c",
+    "filesVerifiedAbsent": 2
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "e9d79b02-5a6e-4ae4-8f65-e9ac60c3a5c9",
+        "name": "qa-auto-2026-10-16T12-27-49-891Z-7d6f2801-d43e521b",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:31:37.192Z"
+      }
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/e9d79b02-5a6e-4ae4-8f65-e9ac60c3a5c9/breadcrumbs",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/e9d79b02-5a6e-4ae4-8f65-e9ac60c3a5c9/contents",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/files/28feb6ab-cfd6-4aea-8e27-797f18e1ff66/complete",
+      "status": 201
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/e9d79b02-5a6e-4ae4-8f65-e9ac60c3a5c9/contents",
+      "status": 200
+    },
+    {
+      "observation": "Browser infers PDF MIME from extension; API missing-MIME validation is separate",
+      "submittedMime": "application/pdf"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=e9d79b02-5a6e-4ae4-8f65-e9ac60c3a5c9&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=28feb6ab-cfd6-4aea-8e27-797f18e1ff66&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/e9d79b02-5a6e-4ae4-8f65-e9ac60c3a5c9",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/e9d79b02-5a6e-4ae4-8f65-e9ac60c3a5c9/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/28feb6ab-cfd6-4aea-8e27-797f18e1ff66",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "e9d79b02-5a6e-4ae4-8f65-e9ac60c3a5c9",
+    "filesVerifiedAbsent": 1
+  }
+}

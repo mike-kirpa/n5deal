@@ -1,0 +1,334 @@
+{
+  "runId": "2026-10-15T19-55-41-346Z-follow-up",
+  "startedAt": "2026-10-15T19:55:41.347Z",
+  "updatedAt": "2026-10-15T19:56:03.096Z",
+  "checks": [
+    {
+      "id": "FOLLOW-01",
+      "title": "Drag-and-drop valid PDF publishes uploaded document",
+      "status": "passed",
+      "durationMs": 2843
+    },
+    {
+      "id": "FOLLOW-02",
+      "title": "Zero-byte browser PDF shows API validation error",
+      "status": "passed",
+      "durationMs": 108
+    },
+    {
+      "id": "FOLLOW-03",
+      "title": "Single-file public link opens PDF and cannot read sibling file",
+      "status": "passed",
+      "durationMs": 6951
+    },
+    {
+      "id": "FOLLOW-04",
+      "title": "Session verification 5xx offers retry and recovers",
+      "status": "passed",
+      "durationMs": 1828
+    },
+    {
+      "id": "FOLLOW-05",
+      "title": "Fresh public access revoked while pre-issued URL remains temporarily usable",
+      "status": "passed",
+      "details": {
+        "beforeRevokeStatus": 200,
+        "freshURLIssuanceStatus": 410,
+        "existingURLStatusImmediatelyAfterRevoke": 200,
+        "expiryEnforcement": "not waited for; documented five-minute TTL",
+        "classification": "documented residual risk, not a defect"
+      },
+      "durationMs": 2083
+    },
+    {
+      "id": "FOLLOW-06",
+      "title": "Keyboard public Download does not also open file row",
+      "status": "passed",
+      "durationMs": 3076
+    },
+    {
+      "id": "FOLLOW-CLEANUP",
+      "title": "Follow-up shares and all PDF/pending metadata cleaned up",
+      "status": "passed",
+      "durationMs": 1816
+    }
+  ],
+  "http": [
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "5a8ec8e1-2620-4f37-9a50-7aa859974877",
+        "name": "qa-follow-up-2026-10-15T19-55-41-346Z-follow-up",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:55:43.729Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/5a8ec8e1-2620-4f37-9a50-7aa859974877/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/5a8ec8e1-2620-4f37-9a50-7aa859974877/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/60bb1541-aed4-4fa6-8148-a95e094ac28c/complete",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/5a8ec8e1-2620-4f37-9a50-7aa859974877/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/5a8ec8e1-2620-4f37-9a50-7aa859974877/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "file",
+            "id": "60bb1541-aed4-4fa6-8148-a95e094ac28c",
+            "name": "drag-drop.pdf",
+            "folderId": "5a8ec8e1-2620-4f37-9a50-7aa859974877",
+            "size": 591,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:55:45.649Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "24a4faf8-038f-4238-9f01-5f8bc937de84",
+        "resourceType": "FILE",
+        "resourceId": "60bb1541-aed4-4fa6-8148-a95e094ac28c",
+        "mode": "PUBLIC_LINK",
+        "token": "[REDACTED]",
+        "granteeEmail": null,
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:55:48.249Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/contents",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/68ad9352-bc72-4b4c-9eff-4c36b8eafed1/complete",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/5a8ec8e1-2620-4f37-9a50-7aa859974877/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/5a8ec8e1-2620-4f37-9a50-7aa859974877/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "file",
+            "id": "60bb1541-aed4-4fa6-8148-a95e094ac28c",
+            "name": "drag-drop.pdf",
+            "folderId": "5a8ec8e1-2620-4f37-9a50-7aa859974877",
+            "size": 591,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:55:45.649Z"
+          },
+          {
+            "type": "file",
+            "id": "68ad9352-bc72-4b4c-9eff-4c36b8eafed1",
+            "name": "sibling.pdf",
+            "folderId": "5a8ec8e1-2620-4f37-9a50-7aa859974877",
+            "size": 591,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:55:52.555Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/68ad9352-bc72-4b4c-9eff-4c36b8eafed1",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "24a4faf8-038f-4238-9f01-5f8bc937de84",
+        "resourceType": "FILE",
+        "resourceId": "60bb1541-aed4-4fa6-8148-a95e094ac28c",
+        "mode": "PUBLIC_LINK",
+        "token": "[REDACTED]",
+        "granteeEmail": null,
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:55:48.249Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/60bb1541-aed4-4fa6-8148-a95e094ac28c/view-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/24a4faf8-038f-4238-9f01-5f8bc937de84",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/60bb1541-aed4-4fa6-8148-a95e094ac28c/view-url",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "7639fc97-aef5-4459-a47a-2a3335294db1",
+        "resourceType": "FOLDER",
+        "resourceId": "5a8ec8e1-2620-4f37-9a50-7aa859974877",
+        "mode": "PUBLIC_LINK",
+        "token": "[REDACTED]",
+        "granteeEmail": null,
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:55:59.025Z"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/24a4faf8-038f-4238-9f01-5f8bc937de84",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/7639fc97-aef5-4459-a47a-2a3335294db1",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/5a8ec8e1-2620-4f37-9a50-7aa859974877",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/5a8ec8e1-2620-4f37-9a50-7aa859974877/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "consoleEvents": [
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 400 ()"
+    }
+  ]
+}

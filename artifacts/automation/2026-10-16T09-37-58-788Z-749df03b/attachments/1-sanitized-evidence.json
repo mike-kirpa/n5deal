@@ -1,0 +1,101 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "3738ed7e-e62d-4547-be9b-b8a95ac5bf3d",
+        "name": "qa-auto-2026-10-16T09-37-58-788Z-749df03b-b3b5f778",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T09:38:01.799Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "75cfa116-1bd2-40a6-8682-a460e15047ee",
+        "name": "missing-bytes.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/75cfa116-1bd2-40a6-8682-a460e15047ee/complete",
+      "status": 500,
+      "body": {
+        "message": "Could not verify the upload",
+        "error": "Internal Server Error",
+        "statusCode": 500
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=3738ed7e-e62d-4547-be9b-b8a95ac5bf3d&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=75cfa116-1bd2-40a6-8682-a460e15047ee&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/3738ed7e-e62d-4547-be9b-b8a95ac5bf3d",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/3738ed7e-e62d-4547-be9b-b8a95ac5bf3d/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/75cfa116-1bd2-40a6-8682-a460e15047ee",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "3738ed7e-e62d-4547-be9b-b8a95ac5bf3d",
+    "filesVerifiedAbsent": 1
+  }
+}

@@ -1,0 +1,115 @@
+name: N5Deal QA
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    name: Static validation (no secrets)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run test:unit
+      - name: Discover all projects; assert no execution/artifact changes
+        run: npm run ci:discover
+
+  integration:
+    name: Manual API + Chromium
+    needs: static
+    # Never expose assessment credentials to PR code or a non-default branch.
+    if: github.event_name == 'workflow_dispatch' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    concurrency:
+      group: n5deal-shared-assessment-integration
+      cancel-in-progress: false
+    env:
+      QA_CI_PREFIX: ci-${{ github.run_id }}-${{ github.run_attempt }}
+      BASE_URL: ${{ vars.BASE_URL || 'https://virtual-data-room-ten.vercel.app' }}
+      API_BASE_URL: ${{ vars.API_BASE_URL || 'https://virtual-data-room-production.up.railway.app' }}
+      QA_OWNER_EMAIL: ${{ vars.QA_OWNER_EMAIL || 'john@example.com' }}
+      QA_VIEWER_EMAIL: ${{ vars.QA_VIEWER_EMAIL || 'viewer@example.com' }}
+      QA_BROWSER_CHANNEL: ''
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: npm ci
+      - name: Validate credentials locally before any login
+        id: credentials
+        run: npm run ci:preflight
+        env:
+          QA_OWNER_PASSWORD: ${{ secrets.QA_OWNER_PASSWORD }}
+          QA_VIEWER_PASSWORD: ${{ secrets.QA_VIEWER_PASSWORD }}
+      - name: Install Playwright-managed Chromium and Linux dependencies
+        id: browsers
+        run: npx playwright install --with-deps chromium
+      - name: Stable API and browser journeys
+        id: stable
+        run: npm test -- --global-timeout=600000
+        env:
+          QA_RUN_ID: ${{ env.QA_CI_PREFIX }}-stable
+          QA_OWNER_PASSWORD: ${{ secrets.QA_OWNER_PASSWORD }}
+          QA_VIEWER_PASSWORD: ${{ secrets.QA_VIEWER_PASSWORD }}
+      - name: Require safe stable teardown before more live mutations
+        id: cleanup
+        if: ${{ !cancelled() && steps.stable.outcome != 'skipped' }}
+        run: node scripts/ci/control.cjs cleanup
+      - name: Known defects (expected failures are not product passes)
+        id: known
+        if: ${{ !cancelled() && steps.cleanup.outcome == 'success' }}
+        run: npm run test:known-bugs -- --global-timeout=300000
+        env:
+          QA_RUN_ID: ${{ env.QA_CI_PREFIX }}-known
+          QA_OWNER_PASSWORD: ${{ secrets.QA_OWNER_PASSWORD }}
+          QA_VIEWER_PASSWORD: ${{ secrets.QA_VIEWER_PASSWORD }}
+      - name: Audit only this CI run before publication
+        id: audit
+        if: ${{ !cancelled() && steps.stable.outcome != 'skipped' }}
+        run: npm run audit:artifacts -- --ci-prefix "$QA_CI_PREFIX"
+        env:
+          QA_OWNER_PASSWORD: ${{ secrets.QA_OWNER_PASSWORD }}
+          QA_VIEWER_PASSWORD: ${{ secrets.QA_VIEWER_PASSWORD }}
+      - name: Upload approved reports only
+        id: upload
+        if: ${{ !cancelled() && steps.audit.outcome == 'success' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: n5deal-qa-${{ env.QA_CI_PREFIX }}
+          path: |
+            artifacts/automation/${{ env.QA_CI_PREFIX }}-stable/report.md
+            artifacts/automation/${{ env.QA_CI_PREFIX }}-stable/results.json
+            artifacts/automation/${{ env.QA_CI_PREFIX }}-known/report.md
+            artifacts/automation/${{ env.QA_CI_PREFIX }}-known/results.json
+          if-no-files-found: error
+          retention-days: 7
+          include-hidden-files: false
+      - name: Evidence-derived summary and final status check
+        if: ${{ !cancelled() }}
+        run: npm run ci:report
+        env:
+          CREDENTIALS_OUTCOME: ${{ steps.credentials.outcome }}
+          BROWSERS_OUTCOME: ${{ steps.browsers.outcome }}
+          STABLE_OUTCOME: ${{ steps.stable.outcome }}
+          CLEANUP_OUTCOME: ${{ steps.cleanup.outcome }}
+          KNOWN_OUTCOME: ${{ steps.known.outcome }}
+          AUDIT_OUTCOME: ${{ steps.audit.outcome }}
+          UPLOAD_OUTCOME: ${{ steps.upload.outcome }}

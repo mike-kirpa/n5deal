@@ -1,0 +1,640 @@
+{
+  "runId": "2026-10-15T19-31-05-870Z-browser-exploration",
+  "startedAt": "2026-10-15T19:31:05.870Z",
+  "updatedAt": "2026-10-15T19:31:42.090Z",
+  "checks": [
+    {
+      "id": "UI-01",
+      "title": "Invalid browser login displays error without navigation",
+      "status": "passed",
+      "durationMs": 658
+    },
+    {
+      "id": "UI-02",
+      "title": "Valid browser login and own isolated folder",
+      "status": "passed",
+      "durationMs": 1270
+    },
+    {
+      "id": "UI-03",
+      "title": "Blank folder name form validation",
+      "status": "passed",
+      "durationMs": 182
+    },
+    {
+      "id": "UI-04",
+      "title": "Create nested folder through browser",
+      "status": "passed",
+      "durationMs": 2188
+    },
+    {
+      "id": "UI-05",
+      "title": "Rename folder through row action",
+      "status": "passed",
+      "durationMs": 1814
+    },
+    {
+      "id": "UI-06",
+      "title": "Duplicate folder displays conflict",
+      "status": "passed",
+      "durationMs": 599
+    },
+    {
+      "id": "UI-07",
+      "title": "Nested navigation, breadcrumbs, deep-link refresh and session persistence",
+      "status": "passed",
+      "durationMs": 1187
+    },
+    {
+      "id": "UI-08",
+      "title": "Folder rows offer a keyboard-focusable open action",
+      "status": "failed",
+      "error": "No keyboard open target: {\"tag\":\"TR\",\"tabIndex\":-1,\"role\":null,\"links\":[]}",
+      "durationMs": 1381
+    },
+    {
+      "id": "UI-09",
+      "title": "Unsupported upload type displays validation error",
+      "status": "passed",
+      "durationMs": 9
+    },
+    {
+      "id": "UI-10",
+      "title": "Multiple valid PDFs finish upload and appear in listing",
+      "status": "passed",
+      "details": {
+        "storagePUTs": [
+          200,
+          200,
+          200,
+          400
+        ],
+        "completionResponses": [
+          {
+            "endpoint": "/files/ef07a4f7-41bd-4ca1-8721-eb97faf016f3/complete",
+            "status": 201
+          },
+          {
+            "endpoint": "/files/c73d1a0b-5cf0-4f65-a58c-1ea76f696ebf/complete",
+            "status": 201
+          },
+          {
+            "endpoint": "/files/dc133271-5db4-4315-824d-8e6536cc6dbd/complete",
+            "status": 500
+          }
+        ],
+        "publicUploadKeyObserved": true
+      },
+      "durationMs": 3100
+    },
+    {
+      "id": "UI-11",
+      "title": "Download completed PDF preserves filename",
+      "status": "passed",
+      "durationMs": 919
+    },
+    {
+      "id": "UI-12",
+      "title": "PDF viewer opens and closes to source folder",
+      "status": "passed",
+      "durationMs": 1419
+    },
+    {
+      "id": "UI-13",
+      "title": "Rename and move uploaded PDF through browser",
+      "status": "failed",
+      "error": "The expression evaluated to a falsy value:\n\n  assert(listing.body.items.some((x) => x.id === file.id && x.name === 'browser-renamed.pdf'))\n",
+      "durationMs": 4004
+    },
+    {
+      "id": "UI-14",
+      "title": "Retry recovers after client-simulated completion failure",
+      "status": "failed",
+      "error": "Retry PUT HTTP 400 after original successful PUT",
+      "durationMs": 4941
+    },
+    {
+      "id": "UI-15",
+      "title": "Share folder using browser; Viewer sees read-only descendants",
+      "status": "passed",
+      "durationMs": 4593
+    },
+    {
+      "id": "UI-16",
+      "title": "Delete preview error does not permit unqualified destructive action",
+      "status": "failed",
+      "error": "Delete stays enabled after failed preview without subtree warning\n\ntrue !== false\n",
+      "durationMs": 1665
+    },
+    {
+      "id": "UI-17",
+      "title": "Session account switch clears owner cache",
+      "status": "passed",
+      "durationMs": 2415
+    },
+    {
+      "id": "UI-18",
+      "title": "Fresh protected navigation rejects an invalid session token",
+      "status": "passed",
+      "details": {
+        "actualExpiry": "invalid token simulation; no clock/secret manipulation"
+      },
+      "durationMs": 138
+    },
+    {
+      "id": "UI-CLEANUP",
+      "title": "Browser assessment shares and folders cleaned up",
+      "status": "passed",
+      "details": {
+        "pendingOrUploadedIntentIdsTracked": 3,
+        "rootDeleted": true
+      },
+      "durationMs": 1453
+    }
+  ],
+  "http": [
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b",
+        "name": "qa-browser-2026-10-15T19-31-05-870Z-browser-exploration",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:31:08.358Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 401,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "folder",
+            "id": "a8e5eb68-db96-43c9-b593-67c4140f0151",
+            "name": "UI child",
+            "parentId": "b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b",
+            "createdAt": "2026-10-15T19:31:11.339Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/folders/a8e5eb68-db96-43c9-b593-67c4140f0151",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 409,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/a8e5eb68-db96-43c9-b593-67c4140f0151/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/a8e5eb68-db96-43c9-b593-67c4140f0151/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/ef07a4f7-41bd-4ca1-8721-eb97faf016f3/complete",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/c73d1a0b-5cf0-4f65-a58c-1ea76f696ebf/complete",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "folder",
+            "id": "a8e5eb68-db96-43c9-b593-67c4140f0151",
+            "name": "UI renamed",
+            "parentId": "b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b",
+            "createdAt": "2026-10-15T19:31:11.339Z"
+          },
+          {
+            "type": "file",
+            "id": "ef07a4f7-41bd-4ca1-8721-eb97faf016f3",
+            "name": "browser-one.pdf",
+            "folderId": "b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b",
+            "size": 590,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:31:18.383Z"
+          },
+          {
+            "type": "file",
+            "id": "c73d1a0b-5cf0-4f65-a58c-1ea76f696ebf",
+            "name": "browser-two.pdf",
+            "folderId": "b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b",
+            "size": 590,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:31:18.291Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef07a4f7-41bd-4ca1-8721-eb97faf016f3/download-url",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef07a4f7-41bd-4ca1-8721-eb97faf016f3",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms/05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/ef07a4f7-41bd-4ca1-8721-eb97faf016f3/view-url",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/ef07a4f7-41bd-4ca1-8721-eb97faf016f3",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms/05f75e29-a0ca-4ff8-ada6-9c4ac8703339/folders",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms/05f75e29-a0ca-4ff8-ada6-9c4ac8703339/folders",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/a8e5eb68-db96-43c9-b593-67c4140f0151/contents",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/ef07a4f7-41bd-4ca1-8721-eb97faf016f3/move",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/dc133271-5db4-4315-824d-8e6536cc6dbd/complete",
+      "status": 500,
+      "via": "browser"
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 400,
+      "via": "browser"
+    },
+    {
+      "observation": "Retry after successful PUT and client-simulated completion failure",
+      "retryPUTStatus": 400,
+      "injectedCompletionResponses": 1
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/a8e5eb68-db96-43c9-b593-67c4140f0151/delete-preview",
+      "status": 500,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/a8e5eb68-db96-43c9-b593-67c4140f0151/delete-preview",
+      "status": 500,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 401,
+      "via": "browser"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/8e6ba9cc-e3bc-449e-90ea-7f39ab1c7dd5",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b7b3aa8a-c6f3-4b8f-94fb-b1459c92eb9b/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "consoleEvents": [
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 401 ()"
+    },
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 409 ()"
+    },
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 400 ()"
+    },
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 401 ()"
+    }
+  ]
+}

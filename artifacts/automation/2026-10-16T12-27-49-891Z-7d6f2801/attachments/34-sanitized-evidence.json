@@ -1,0 +1,202 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "d82d3001-077b-4b05-9a30-0cd429e4a114",
+        "name": "qa-auto-2026-10-16T12-27-49-891Z-7d6f2801-376546a8",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:31:48.401Z"
+      }
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/d82d3001-077b-4b05-9a30-0cd429e4a114/breadcrumbs",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/d82d3001-077b-4b05-9a30-0cd429e4a114/contents",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/d82d3001-077b-4b05-9a30-0cd429e4a114/contents",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/65f74338-248f-48cd-9ed5-f058afae74f7/breadcrumbs",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/65f74338-248f-48cd-9ed5-f058afae74f7/contents",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201
+    },
+    {
+      "via": "browser",
+      "method": "POST",
+      "endpoint": "/files/3ae5efeb-4420-4a58-a272-535558db0a9a/complete",
+      "status": 201
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/65f74338-248f-48cd-9ed5-f058afae74f7/contents",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/files/3ae5efeb-4420-4a58-a272-535558db0a9a",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/data-rooms/05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/files/3ae5efeb-4420-4a58-a272-535558db0a9a/view-url",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/65f74338-248f-48cd-9ed5-f058afae74f7/breadcrumbs",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/folders/65f74338-248f-48cd-9ed5-f058afae74f7/contents",
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "method": "GET",
+      "endpoint": "/files/3ae5efeb-4420-4a58-a272-535558db0a9a/download-url",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=d82d3001-077b-4b05-9a30-0cd429e4a114&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=65f74338-248f-48cd-9ed5-f058afae74f7&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=3ae5efeb-4420-4a58-a272-535558db0a9a&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/d82d3001-077b-4b05-9a30-0cd429e4a114",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/d82d3001-077b-4b05-9a30-0cd429e4a114/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/65f74338-248f-48cd-9ed5-f058afae74f7/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/3ae5efeb-4420-4a58-a272-535558db0a9a",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "d82d3001-077b-4b05-9a30-0cd429e4a114",
+    "filesVerifiedAbsent": 1
+  }
+}

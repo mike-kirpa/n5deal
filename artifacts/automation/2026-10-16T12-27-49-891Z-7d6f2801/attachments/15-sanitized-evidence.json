@@ -1,0 +1,98 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "0188915a-00f5-46a3-a5c7-fa2c3280f323",
+        "name": "qa-auto-2026-10-16T12-27-49-891Z-7d6f2801-66ec3939",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:28:58.525Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "97c5f2c3-802a-4681-a036-266d0232ad02",
+        "name": "extension-check.txt",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "observation": "Filename extension policy; no storage bytes sent",
+      "name": "extension-check.txt",
+      "declaredMime": "application/pdf",
+      "status": 201,
+      "extensionRejected": false
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=0188915a-00f5-46a3-a5c7-fa2c3280f323&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=97c5f2c3-802a-4681-a036-266d0232ad02&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/0188915a-00f5-46a3-a5c7-fa2c3280f323",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/0188915a-00f5-46a3-a5c7-fa2c3280f323/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/97c5f2c3-802a-4681-a036-266d0232ad02",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "0188915a-00f5-46a3-a5c7-fa2c3280f323",
+    "filesVerifiedAbsent": 1
+  }
+}

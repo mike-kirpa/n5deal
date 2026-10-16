@@ -1,0 +1,145 @@
+{
+  "runId": "2026-10-16T09-39-12-762Z-environment",
+  "startedAt": "2026-10-16T09:39:12.763Z",
+  "updatedAt": "2026-10-16T09:39:15.935Z",
+  "checks": [
+    {
+      "id": "ENV-01",
+      "title": "Frontend availability",
+      "status": "passed",
+      "details": {
+        "status": 200,
+        "contentType": "text/html; charset=utf-8"
+      },
+      "durationMs": 188
+    },
+    {
+      "id": "ENV-02",
+      "title": "Backend health",
+      "status": "passed",
+      "durationMs": 70
+    },
+    {
+      "id": "ENV-03",
+      "title": "Documented account 1 authentication",
+      "status": "passed",
+      "durationMs": 334
+    },
+    {
+      "id": "ENV-04",
+      "title": "Documented account 2 authentication",
+      "status": "passed",
+      "durationMs": 350
+    },
+    {
+      "id": "ENV-05",
+      "title": "Chrome automation and login form",
+      "status": "passed",
+      "details": {
+        "navigationStatus": 200,
+        "browserVersion": "155.0.8059.79"
+      },
+      "durationMs": 999
+    },
+    {
+      "id": "ENV-06",
+      "title": "Create and clean up assessment-owned folder",
+      "status": "passed",
+      "durationMs": 1006
+    }
+  ],
+  "http": [
+    {
+      "method": "GET",
+      "endpoint": "/health",
+      "status": 200,
+      "body": {
+        "status": "ok"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "body": {
+        "id": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "email": "john@example.com",
+        "name": "John Doe",
+        "createdAt": "2026-10-15T14:45:31.770Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "body": {
+        "id": "6d285eba-ad8b-44de-a52c-24dd0ce6a6f8",
+        "email": "viewer@example.com",
+        "name": "Viewer",
+        "createdAt": "2026-10-15T14:50:27.078Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "b5985b34-6cac-434e-a9a2-dddd33dee0df",
+        "name": "qa-environment-2026-10-16T09-39-12-762Z-environment",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T09:39:16.542Z"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/b5985b34-6cac-434e-a9a2-dddd33dee0df",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b5985b34-6cac-434e-a9a2-dddd33dee0df/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "consoleEvents": []
+}

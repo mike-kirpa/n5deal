@@ -1,0 +1,251 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "ef92501b-8009-4baf-87dc-5e557fd64f80",
+        "name": "qa-auto-2026-10-16T13-07-52-314Z-1c0d5029-f96c1323",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T13:08:48.451Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/ef92501b-8009-4baf-87dc-5e557fd64f80/contents",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "observation": "client upload header observed; probe PUT cancelled locally",
+      "visibleProbeFiles": 0
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "49189313-a4b1-4ce4-aac9-403fc513890d",
+        "name": "capability-a.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL omitted]",
+      "status": 200,
+      "byteCount": 587
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/49189313-a4b1-4ce4-aac9-403fc513890d/complete",
+      "status": 201,
+      "body": {
+        "id": "49189313-a4b1-4ce4-aac9-403fc513890d",
+        "name": "capability-a.pdf",
+        "folderId": "ef92501b-8009-4baf-87dc-5e557fd64f80"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "52dbac10-cab3-451f-acd7-1b0278bf04f0",
+        "name": "capability-b.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL omitted]",
+      "status": 200,
+      "byteCount": 587
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/52dbac10-cab3-451f-acd7-1b0278bf04f0/complete",
+      "status": 201,
+      "body": {
+        "id": "52dbac10-cab3-451f-acd7-1b0278bf04f0",
+        "name": "capability-b.pdf",
+        "folderId": "ef92501b-8009-4baf-87dc-5e557fd64f80"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/49189313-a4b1-4ce4-aac9-403fc513890d/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/52dbac10-cab3-451f-acd7-1b0278bf04f0/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "[signed content URL omitted]",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "endpoint": "[signed content URL omitted]",
+      "status": 400
+    },
+    {
+      "check": "Storage capability negative control; only assessment-owned objects",
+      "variant": "missing token",
+      "status": 400,
+      "returnsEitherOriginal": false
+    },
+    {
+      "method": "GET",
+      "endpoint": "[signed content URL omitted]",
+      "status": 400
+    },
+    {
+      "check": "Storage capability negative control; only assessment-owned objects",
+      "variant": "modified signature",
+      "status": 400,
+      "returnsEitherOriginal": false
+    },
+    {
+      "method": "GET",
+      "endpoint": "[signed content URL omitted]",
+      "status": 400
+    },
+    {
+      "check": "Storage capability negative control; only assessment-owned objects",
+      "variant": "other owned object path",
+      "status": 400,
+      "returnsEitherOriginal": false
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/52dbac10-cab3-451f-acd7-1b0278bf04f0/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "[signed content URL omitted]",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=ef92501b-8009-4baf-87dc-5e557fd64f80&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=cc9a7b76-779d-4a50-b396-c1f866ec400a&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=49189313-a4b1-4ce4-aac9-403fc513890d&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=52dbac10-cab3-451f-acd7-1b0278bf04f0&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/ef92501b-8009-4baf-87dc-5e557fd64f80",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/ef92501b-8009-4baf-87dc-5e557fd64f80/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/cc9a7b76-779d-4a50-b396-c1f866ec400a",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/49189313-a4b1-4ce4-aac9-403fc513890d",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/52dbac10-cab3-451f-acd7-1b0278bf04f0",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "ef92501b-8009-4baf-87dc-5e557fd64f80",
+    "filesVerifiedAbsent": 3
+  }
+}

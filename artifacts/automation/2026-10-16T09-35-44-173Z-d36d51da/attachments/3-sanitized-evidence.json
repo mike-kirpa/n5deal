@@ -1,0 +1,99 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "0ecd68a3-784b-493f-92d0-3d03be4fbb0c",
+        "name": "qa-auto-2026-10-16T09-35-44-173Z-d36d51da-d2f16b7f",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T09:35:47.776Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 401,
+      "body": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/0ecd68a3-784b-493f-92d0-3d03be4fbb0c/contents",
+      "status": 401,
+      "body": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 401,
+      "body": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/0ecd68a3-784b-493f-92d0-3d03be4fbb0c/contents",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=0ecd68a3-784b-493f-92d0-3d03be4fbb0c&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/0ecd68a3-784b-493f-92d0-3d03be4fbb0c",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/0ecd68a3-784b-493f-92d0-3d03be4fbb0c/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "0ecd68a3-784b-493f-92d0-3d03be4fbb0c",
+    "filesVerifiedAbsent": 0
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "runId": "2026-10-16T09-18-36-893Z-b6eaecd0",
+  "endedAt": "2026-10-16T09:19:17.182Z",
+  "runnerStatus": "passed",
+  "effectiveStatus": "passed",
+  "counts": {
+    "expected-failure": 4
+  },
+  "globalErrors": [],
+  "tests": [
+    {
+      "title": "BUG-002 @known-bug completion without uploaded bytes returns a client error",
+      "project": "known-api",
+      "classification": "expected-failure",
+      "status": "failed",
+      "expectedStatus": "failed",
+      "durationMs": 3041,
+      "bugs": [
+        "BUG-002"
+      ],
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m500\u001b[39m"
+      ],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "BUG-001 @known-bug Retry recovers after successful PUT and one failed completion",
+      "project": "known-chromium",
+      "classification": "expected-failure",
+      "status": "failed",
+      "expectedStatus": "failed",
+      "durationMs": 15018,
+      "bugs": [
+        "BUG-001"
+      ],
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('cell', { name: 'retry-recovery.pdf', exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('cell', { name: 'retry-recovery.pdf', exact: true })\u001b[22m\n"
+      ],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "BUG-001-retry-terminal-state"
+        },
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "BUG-003 @known-bug failed delete preview blocks deletion or warns about unknown nested content",
+      "project": "known-chromium",
+      "classification": "expected-failure",
+      "status": "failed",
+      "expectedStatus": "failed",
+      "durationMs": 6684,
+      "bugs": [
+        "BUG-003"
+      ],
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m"
+      ],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "BUG-003-delete-preview-error"
+        },
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    },
+    {
+      "title": "BUG-004 @known-bug a nested folder has a keyboard-operable open action",
+      "project": "known-chromium",
+      "classification": "expected-failure",
+      "status": "failed",
+      "expectedStatus": "failed",
+      "durationMs": 14325,
+      "bugs": [
+        "BUG-004"
+      ],
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"[URL REDACTED]\"\u001b[39m\nReceived: \u001b[31m\"[URL REDACTED]\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"[URL REDACTED]\"\u001b[22m\n"
+      ],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "BUG-004-keyboard-navigation"
+        },
+        {
+          "name": "sanitized-evidence"
+        }
+      ]
+    }
+  ]
+}

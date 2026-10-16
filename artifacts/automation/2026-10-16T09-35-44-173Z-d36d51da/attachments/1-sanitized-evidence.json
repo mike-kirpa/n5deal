@@ -1,0 +1,26 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "body": {
+        "id": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "email": "john@example.com",
+        "name": "John Doe",
+        "createdAt": "2026-10-15T14:45:31.770Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "body": {
+        "id": "6d285eba-ad8b-44de-a52c-24dd0ce6a6f8",
+        "email": "viewer@example.com",
+        "name": "Viewer",
+        "createdAt": "2026-10-15T14:50:27.078Z"
+      }
+    }
+  ]
+}

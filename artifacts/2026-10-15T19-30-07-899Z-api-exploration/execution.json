@@ -1,0 +1,1817 @@
+{
+  "runId": "2026-10-15T19-30-07-899Z-api-exploration",
+  "startedAt": "2026-10-15T19:30:07.900Z",
+  "updatedAt": "2026-10-15T19:31:01.298Z",
+  "checks": [
+    {
+      "id": "API-01",
+      "title": "Invalid credentials rejected",
+      "status": "passed",
+      "durationMs": 196
+    },
+    {
+      "id": "API-02",
+      "title": "Missing and malformed bearer tokens rejected",
+      "status": "passed",
+      "durationMs": 81
+    },
+    {
+      "id": "API-03",
+      "title": "Isolated owner and viewer fixtures",
+      "status": "passed",
+      "durationMs": 2156
+    },
+    {
+      "id": "API-04",
+      "title": "Unshared room and folder denied to other documented account",
+      "status": "passed",
+      "durationMs": 1157
+    },
+    {
+      "id": "API-05",
+      "title": "Folder duplicate names case-insensitive; rename and trim",
+      "status": "passed",
+      "durationMs": 1069
+    },
+    {
+      "id": "API-06",
+      "title": "Blank folder names rejected without resource creation",
+      "status": "passed",
+      "durationMs": 81
+    },
+    {
+      "id": "API-07",
+      "title": "Foreign-room parent and upload folder rejected",
+      "status": "passed",
+      "durationMs": 461
+    },
+    {
+      "id": "API-08",
+      "title": "Upload metadata rejects unsupported MIME, zero and over-limit size",
+      "status": "passed",
+      "durationMs": 131
+    },
+    {
+      "id": "API-09",
+      "title": "Pending upload invisible and premature completion rejected",
+      "status": "failed",
+      "error": "POST /files/6141c0bb-5956-4007-b74b-327de9656370/complete expected 400, actual 500\n\n500 !== 400\n",
+      "durationMs": 1669
+    },
+    {
+      "id": "API-10",
+      "title": "Resolve client upload configuration",
+      "status": "passed",
+      "details": {
+        "resolved": true,
+        "keySaved": false,
+        "fallback": "If needed observe normal browser header and cancel only that client PUT; pending row cleaned with QA subtree"
+      },
+      "durationMs": 2308
+    },
+    {
+      "id": "API-11",
+      "title": "Valid PDF upload, confirm, metadata and bytes",
+      "status": "passed",
+      "details": {
+        "byteCount": 598,
+        "storedByteCount": 598,
+        "viewHTTPStatus": 200
+      },
+      "durationMs": 2102
+    },
+    {
+      "id": "API-12",
+      "title": "Viewer cannot read unshared file metadata or URLs",
+      "status": "passed",
+      "durationMs": 1592
+    },
+    {
+      "id": "API-13",
+      "title": "Sequential upload and rename resolve name conflicts",
+      "status": "passed",
+      "durationMs": 1836
+    },
+    {
+      "id": "API-14",
+      "title": "Cursor pagination crosses folders and files without omissions",
+      "status": "passed",
+      "details": {
+        "pages": 3,
+        "returnedItems": 3
+      },
+      "durationMs": 2546
+    },
+    {
+      "id": "API-15",
+      "title": "Malformed cursor and invalid limit rejected",
+      "status": "passed",
+      "durationMs": 268
+    },
+    {
+      "id": "API-16",
+      "title": "USER folder grant inherits and breadcrumbs hide ancestors",
+      "status": "passed",
+      "durationMs": 2976
+    },
+    {
+      "id": "API-17",
+      "title": "Viewer folder and file mutations rejected",
+      "status": "passed",
+      "details": {
+        "rejectedOperations": 9
+      },
+      "durationMs": 4216
+    },
+    {
+      "id": "API-18",
+      "title": "Viewer cannot manage or revoke shares",
+      "status": "passed",
+      "durationMs": 1341
+    },
+    {
+      "id": "API-19",
+      "title": "Sequential repeated USER and public grants reuse active records",
+      "status": "passed",
+      "durationMs": 1100
+    },
+    {
+      "id": "API-20",
+      "title": "Anonymous public folder token scoped to subtree",
+      "status": "passed",
+      "durationMs": 2611
+    },
+    {
+      "id": "API-21",
+      "title": "Overlapping direct file grant survives parent revocation",
+      "status": "passed",
+      "durationMs": 3900
+    },
+    {
+      "id": "API-22",
+      "title": "Public revocation rejects every fresh read with 410",
+      "status": "passed",
+      "durationMs": 1149
+    },
+    {
+      "id": "API-23",
+      "title": "Move file; deny old inheritance and preserve direct grant",
+      "status": "passed",
+      "durationMs": 4879
+    },
+    {
+      "id": "API-24",
+      "title": "Download filename and content preserved after rename",
+      "status": "passed",
+      "details": {
+        "status": 200,
+        "contentDisposition": "attachment; filename=\"QA renamed document.pdf\"; filename*=UTF-8''QA%20renamed%20document.pdf",
+        "byteCount": 598
+      },
+      "durationMs": 1133
+    },
+    {
+      "id": "API-25",
+      "title": "Tiny mismatched upload metadata uses actual stored size",
+      "status": "passed",
+      "details": {
+        "declaredSize": 1,
+        "actualSize": 598,
+        "ceilingValidation": "not tested"
+      },
+      "durationMs": 1495
+    },
+    {
+      "id": "API-26",
+      "title": "Move conflicts and same-folder moves preserve stable file identity",
+      "status": "passed",
+      "durationMs": 2171
+    },
+    {
+      "id": "API-27",
+      "title": "Recursive deletion preview matches completed descendant files",
+      "status": "passed",
+      "details": {
+        "folderCount": 4,
+        "fileCount": 5,
+        "totalSize": 2990
+      },
+      "durationMs": 435
+    },
+    {
+      "id": "API-28",
+      "title": "Single-file deletion rejects subsequent metadata and signed URL requests",
+      "status": "passed",
+      "durationMs": 1990
+    },
+    {
+      "id": "API-29",
+      "title": "Received share list includes only assessment grant IDs being checked",
+      "status": "passed",
+      "durationMs": 324
+    },
+    {
+      "id": "H01",
+      "title": "Email ownership takeover hypothesis",
+      "status": "blocked",
+      "reason": "Only two existing documented accounts are authorized; an unused owned mailbox/account and account cleanup are unavailable. No account was created."
+    },
+    {
+      "id": "H03-RACE",
+      "title": "Concurrent duplicate sharing grants",
+      "status": "blocked",
+      "reason": "Concurrency experiments on shared infrastructure explicitly require additional authorization. Sequential dedup was checked."
+    },
+    {
+      "id": "H04-RACE",
+      "title": "Concurrent sibling-name collisions",
+      "status": "blocked",
+      "reason": "No concurrency experiment authorized against shared infrastructure. Sequential conflict behavior was checked."
+    },
+    {
+      "id": "H06-CEILING",
+      "title": "Actual oversized content and bucket MIME policy",
+      "status": "blocked",
+      "reason": "No dedicated bucket or configuration observability. Only metadata validation and tiny actual-size reconciliation checked; no oversized storage experiment."
+    },
+    {
+      "id": "H07-INFRA",
+      "title": "Storage cleanup failure and database rollback consistency",
+      "status": "blocked",
+      "reason": "No privileged DB/bucket access or storage failure-injection authorization. Metadata cleanup checked externally only."
+    },
+    {
+      "id": "H10-PERSISTENT",
+      "title": "Whitespace-only registration and data-room API names",
+      "status": "blocked",
+      "reason": "Creates permanent accounts/rooms with no deletion endpoint; prohibited unnecessary permanent fixtures. Folder equivalents checked."
+    },
+    {
+      "id": "API-CLEANUP",
+      "title": "Revoke created shares and remove all assessment resources",
+      "status": "passed",
+      "details": {
+        "rootsDeleted": 1,
+        "filesAbsent": 7,
+        "uniqueSharesTracked": 6
+      },
+      "durationMs": 5454
+    }
+  ],
+  "http": [
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 401,
+      "body": {
+        "message": "Invalid email or password",
+        "error": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 401,
+      "body": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 401,
+      "body": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "8b0112a7-8212-4fc9-9a8c-544f65ddcc23",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:50:27.118Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "dbfcd8ac-a2fe-4777-9ac7-4dc040a65da7",
+        "name": "qa-viewer-2026-10-15T19-30-07-899Z-api-exploration",
+        "parentId": null,
+        "dataRoomId": "8b0112a7-8212-4fc9-9a8c-544f65ddcc23",
+        "createdAt": "2026-10-15T19:30:10.544Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "fcfe182c-eb4e-42c4-8f7e-9b460e7aef22",
+        "name": "qa-api-2026-10-15T19-30-07-899Z-api-exploration",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:30:10.863Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+        "name": "Source",
+        "parentId": "fcfe182c-eb4e-42c4-8f7e-9b460e7aef22",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:30:11.282Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "b38af375-7eb1-4140-a92f-a6b98e21c001",
+        "name": "Destination",
+        "parentId": "fcfe182c-eb4e-42c4-8f7e-9b460e7aef22",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:30:11.699Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "6da852f6-8387-4269-a16a-150c5b766c8b",
+        "name": "Nested",
+        "parentId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:30:12.112Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms/05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/fcfe182c-eb4e-42c4-8f7e-9b460e7aef22/contents",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/fcfe182c-eb4e-42c4-8f7e-9b460e7aef22/breadcrumbs",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 409,
+      "body": {
+        "message": "A folder named \"source\" already exists here",
+        "error": "Conflict",
+        "statusCode": 409
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/folders/b38af375-7eb1-4140-a92f-a6b98e21c001",
+      "status": 200,
+      "body": {
+        "id": "b38af375-7eb1-4140-a92f-a6b98e21c001",
+        "name": "Destination renamed",
+        "parentId": "fcfe182c-eb4e-42c4-8f7e-9b460e7aef22",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:30:11.699Z"
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/folders/b38af375-7eb1-4140-a92f-a6b98e21c001",
+      "status": 409,
+      "body": {
+        "message": "A folder named \"SOURCE\" already exists here",
+        "error": "Conflict",
+        "statusCode": 409
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 400,
+      "body": {
+        "message": [
+          "Enter a folder name"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/folders/d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+      "status": 400,
+      "body": {
+        "message": [
+          "Enter a folder name"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 404,
+      "body": {
+        "message": "Parent folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "Only PDF files are supported"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "size must not be less than 1"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "File exceeds the 50 MB limit"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "6141c0bb-5956-4007-b74b-327de9656370",
+        "name": "pending.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/d163fdfb-0d1d-44ef-ae80-5562d211e81b/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "folder",
+            "id": "6da852f6-8387-4269-a16a-150c5b766c8b",
+            "name": "Nested",
+            "parentId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+            "createdAt": "2026-10-15T19:30:12.112Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6141c0bb-5956-4007-b74b-327de9656370",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6141c0bb-5956-4007-b74b-327de9656370/view-url",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6141c0bb-5956-4007-b74b-327de9656370/download-url",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/6141c0bb-5956-4007-b74b-327de9656370/complete",
+      "status": 500,
+      "body": {
+        "message": "Could not verify the upload",
+        "error": "Internal Server Error",
+        "statusCode": 500
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "name": "report.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "byteCount": 598
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/complete",
+      "status": 201,
+      "body": {
+        "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "name": "report.pdf",
+        "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 200,
+      "body": {
+        "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "name": "report.pdf",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/view-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/view-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/download-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "c0b841f0-5851-4742-b836-e97784653949",
+        "name": "REPORT (1).pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "byteCount": 598
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/c0b841f0-5851-4742-b836-e97784653949/complete",
+      "status": 201,
+      "body": {
+        "id": "c0b841f0-5851-4742-b836-e97784653949",
+        "name": "REPORT (1).pdf",
+        "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b"
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/c0b841f0-5851-4742-b836-e97784653949",
+      "status": 200,
+      "body": {
+        "id": "c0b841f0-5851-4742-b836-e97784653949",
+        "name": "report (1).pdf",
+        "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "uploadedAt": "2026-10-15T19:30:24.006Z",
+        "createdAt": "2026-10-15T19:30:23.204Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "d63d9df6-5e62-4f51-8094-855884b7472e",
+        "name": "Another nested",
+        "parentId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:30:24.947Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "087b6c82-4726-4d6c-a59e-eaa7a3638547",
+        "name": "root-level.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "byteCount": 598
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/087b6c82-4726-4d6c-a59e-eaa7a3638547/complete",
+      "status": 201,
+      "body": {
+        "id": "087b6c82-4726-4d6c-a59e-eaa7a3638547",
+        "name": "root-level.pdf",
+        "folderId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/d163fdfb-0d1d-44ef-ae80-5562d211e81b/contents?limit=1",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "folder",
+            "id": "d63d9df6-5e62-4f51-8094-855884b7472e",
+            "name": "Another nested",
+            "parentId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+            "createdAt": "2026-10-15T19:30:24.947Z"
+          }
+        ],
+        "nextCursor": "eyJ0IjoiZm9sZGVyIiwibiI6ImFub3RoZXIgbmVzdGVkIiwiaSI6ImQ2M2Q5ZGY2LTVlNjItNGY1MS04MDk0LTg1NTg4NGI3NDcyZSJ9"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/d163fdfb-0d1d-44ef-ae80-5562d211e81b/contents?limit=1&cursor=eyJ0IjoiZm9sZGVyIiwibiI6ImFub3RoZXIgbmVzdGVkIiwiaSI6ImQ2M2Q5ZGY2LTVlNjItNGY1MS04MDk0LTg1NTg4NGI3NDcyZSJ9",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "folder",
+            "id": "6da852f6-8387-4269-a16a-150c5b766c8b",
+            "name": "Nested",
+            "parentId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+            "createdAt": "2026-10-15T19:30:12.112Z"
+          }
+        ],
+        "nextCursor": "eyJ0IjoiZm9sZGVyIiwibiI6Im5lc3RlZCIsImkiOiI2ZGE4NTJmNi04Mzg3LTQyNjktYTE2YS0xNTBjNWI3NjZjOGIifQ"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/d163fdfb-0d1d-44ef-ae80-5562d211e81b/contents?limit=1&cursor=eyJ0IjoiZm9sZGVyIiwibiI6Im5lc3RlZCIsImkiOiI2ZGE4NTJmNi04Mzg3LTQyNjktYTE2YS0xNTBjNWI3NjZjOGIifQ",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "file",
+            "id": "087b6c82-4726-4d6c-a59e-eaa7a3638547",
+            "name": "root-level.pdf",
+            "folderId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+            "size": 598,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:30:25.363Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/d163fdfb-0d1d-44ef-ae80-5562d211e81b/contents?cursor=bad",
+      "status": 400,
+      "body": {
+        "message": "Invalid pagination cursor",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/d163fdfb-0d1d-44ef-ae80-5562d211e81b/contents?limit=101",
+      "status": 400,
+      "body": {
+        "message": [
+          "limit must not be greater than 100"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "7dab1e55-f5e0-4b47-9834-b35adc67f5a1",
+        "resourceType": "FOLDER",
+        "resourceId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+        "mode": "USER",
+        "token": "[REDACTED]",
+        "granteeEmail": "viewer@example.com",
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:30:27.767Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/6da852f6-8387-4269-a16a-150c5b766c8b/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "file",
+            "id": "c0b841f0-5851-4742-b836-e97784653949",
+            "name": "report (1).pdf",
+            "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+            "size": 598,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:30:23.204Z"
+          },
+          {
+            "type": "file",
+            "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+            "name": "report.pdf",
+            "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+            "size": 598,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:30:19.415Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 200,
+      "body": {
+        "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "name": "report.pdf",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/6da852f6-8387-4269-a16a-150c5b766c8b/breadcrumbs",
+      "status": 200,
+      "body": {
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "dataRoomName": null,
+        "folders": [
+          {
+            "id": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+            "name": "Source"
+          },
+          {
+            "id": "6da852f6-8387-4269-a16a-150c5b766c8b",
+            "name": "Nested"
+          }
+        ],
+        "accessLevel": "VIEWER"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/b38af375-7eb1-4140-a92f-a6b98e21c001/contents",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms/05f75e29-a0ca-4ff8-ada6-9c4ac8703339/contents",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/folders/d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/6da852f6-8387-4269-a16a-150c5b766c8b",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/d163fdfb-0d1d-44ef-ae80-5562d211e81b/delete-preview",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/move",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/complete",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/7dab1e55-f5e0-4b47-9834-b35adc67f5a1",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "7dab1e55-f5e0-4b47-9834-b35adc67f5a1",
+        "resourceType": "FOLDER",
+        "resourceId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+        "mode": "USER",
+        "token": "[REDACTED]",
+        "granteeEmail": "viewer@example.com",
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:30:27.767Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "c2af93de-8a31-4abf-9b85-c0832b3c884d",
+        "resourceType": "FOLDER",
+        "resourceId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+        "mode": "PUBLIC_LINK",
+        "token": "[REDACTED]",
+        "granteeEmail": null,
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:30:36.646Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "c2af93de-8a31-4abf-9b85-c0832b3c884d",
+        "resourceType": "FOLDER",
+        "resourceId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+        "mode": "PUBLIC_LINK",
+        "token": "[REDACTED]",
+        "granteeEmail": null,
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:30:36.646Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]",
+      "status": 200,
+      "body": {
+        "resourceType": "FOLDER",
+        "resourceId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+        "resourceName": "Source",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/folders/6da852f6-8387-4269-a16a-150c5b766c8b/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "file",
+            "id": "c0b841f0-5851-4742-b836-e97784653949",
+            "name": "report (1).pdf",
+            "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+            "size": 598,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:30:23.204Z"
+          },
+          {
+            "type": "file",
+            "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+            "name": "report.pdf",
+            "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+            "size": 598,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:30:19.415Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 200,
+      "body": {
+        "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "name": "report.pdf",
+        "size": 598,
+        "mimeType": "application/pdf"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/contents",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/folders/b38af375-7eb1-4140-a92f-a6b98e21c001/contents",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/qa-definitely-invalid-token",
+      "status": 404,
+      "body": {
+        "message": "Link not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "ec96b024-f82e-4969-b19e-dc8799a6aa77",
+        "resourceType": "FILE",
+        "resourceId": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "mode": "USER",
+        "token": "[REDACTED]",
+        "granteeEmail": "viewer@example.com",
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:30:40.118Z"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/7dab1e55-f5e0-4b47-9834-b35adc67f5a1",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/d163fdfb-0d1d-44ef-ae80-5562d211e81b/contents",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 200,
+      "body": {
+        "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "name": "report.pdf",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/ec96b024-f82e-4969-b19e-dc8799a6aa77",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/view-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/download-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/c2af93de-8a31-4abf-9b85-c0832b3c884d",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/folders/6da852f6-8387-4269-a16a-150c5b766c8b/contents",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/view-url",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/download-url",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/move",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "4931f858-966f-48d0-988d-59c4e671e83b",
+        "resourceType": "FOLDER",
+        "resourceId": "d163fdfb-0d1d-44ef-ae80-5562d211e81b",
+        "mode": "USER",
+        "token": "[REDACTED]",
+        "granteeEmail": "viewer@example.com",
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:30:45.534Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "57cda142-1b1a-4359-9458-68f573d6d9e4",
+        "resourceType": "FILE",
+        "resourceId": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "mode": "USER",
+        "token": "[REDACTED]",
+        "granteeEmail": "viewer@example.com",
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:30:46.049Z"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/57cda142-1b1a-4359-9458-68f573d6d9e4",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/move",
+      "status": 200,
+      "body": {
+        "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "name": "report.pdf",
+        "folderId": "b38af375-7eb1-4140-a92f-a6b98e21c001",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "uploadedAt": "2026-10-15T19:30:20.212Z",
+        "createdAt": "2026-10-15T19:30:19.415Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "cb2e96e5-3d44-4ce9-9f03-338c6f878acb",
+        "resourceType": "FILE",
+        "resourceId": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "mode": "USER",
+        "token": "[REDACTED]",
+        "granteeEmail": "viewer@example.com",
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-15T19:30:48.101Z"
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/move",
+      "status": 200,
+      "body": {
+        "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "name": "report.pdf",
+        "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "uploadedAt": "2026-10-15T19:30:20.212Z",
+        "createdAt": "2026-10-15T19:30:19.415Z"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/4931f858-966f-48d0-988d-59c4e671e83b",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 200,
+      "body": {
+        "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "name": "report.pdf",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 200,
+      "body": {
+        "id": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+        "name": "QA renamed document.pdf",
+        "folderId": "6da852f6-8387-4269-a16a-150c5b766c8b",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "uploadedAt": "2026-10-15T19:30:20.212Z",
+        "createdAt": "2026-10-15T19:30:19.415Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "96fd4e9e-9991-4ae6-9683-36727d02ad7f",
+        "name": "declared-size-one.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "byteCount": 598
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/96fd4e9e-9991-4ae6-9683-36727d02ad7f/complete",
+      "status": 201,
+      "body": {
+        "id": "96fd4e9e-9991-4ae6-9683-36727d02ad7f",
+        "name": "declared-size-one.pdf",
+        "folderId": "b38af375-7eb1-4140-a92f-a6b98e21c001"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/96fd4e9e-9991-4ae6-9683-36727d02ad7f",
+      "status": 200,
+      "body": {
+        "id": "96fd4e9e-9991-4ae6-9683-36727d02ad7f",
+        "name": "declared-size-one.pdf",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "folderId": "b38af375-7eb1-4140-a92f-a6b98e21c001",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "649f694b-3c6b-41f0-8c6d-52515313a6d4",
+        "name": "REPORT (1).pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "byteCount": 598
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/649f694b-3c6b-41f0-8c6d-52515313a6d4/complete",
+      "status": 201,
+      "body": {
+        "id": "649f694b-3c6b-41f0-8c6d-52515313a6d4",
+        "name": "REPORT (1).pdf",
+        "folderId": "b38af375-7eb1-4140-a92f-a6b98e21c001"
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/c0b841f0-5851-4742-b836-e97784653949/move",
+      "status": 200,
+      "body": {
+        "id": "c0b841f0-5851-4742-b836-e97784653949",
+        "name": "report (1) (1).pdf",
+        "folderId": "b38af375-7eb1-4140-a92f-a6b98e21c001",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "uploadedAt": "2026-10-15T19:30:24.006Z",
+        "createdAt": "2026-10-15T19:30:23.204Z"
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/files/c0b841f0-5851-4742-b836-e97784653949/move",
+      "status": 200,
+      "body": {
+        "id": "c0b841f0-5851-4742-b836-e97784653949",
+        "name": "report (1) (1).pdf",
+        "folderId": "b38af375-7eb1-4140-a92f-a6b98e21c001",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "uploadedAt": "2026-10-15T19:30:24.006Z",
+        "createdAt": "2026-10-15T19:30:23.204Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/fcfe182c-eb4e-42c4-8f7e-9b460e7aef22/delete-preview",
+      "status": 200,
+      "body": {
+        "folderCount": 4,
+        "fileCount": 5,
+        "totalSize": 2990
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "a5150b13-0ce1-4381-8170-d8034e569e9c",
+        "name": "delete-me.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "byteCount": 598
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/a5150b13-0ce1-4381-8170-d8034e569e9c/complete",
+      "status": 201,
+      "body": {
+        "id": "a5150b13-0ce1-4381-8170-d8034e569e9c",
+        "name": "delete-me.pdf",
+        "folderId": "b38af375-7eb1-4140-a92f-a6b98e21c001"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/files/a5150b13-0ce1-4381-8170-d8034e569e9c",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/a5150b13-0ce1-4381-8170-d8034e569e9c",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/a5150b13-0ce1-4381-8170-d8034e569e9c/view-url",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/a5150b13-0ce1-4381-8170-d8034e569e9c/download-url",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares/received",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "shareId": "cb2e96e5-3d44-4ce9-9f03-338c6f878acb",
+            "resourceType": "FILE",
+            "resourceId": "c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+            "resourceName": "QA renamed document.pdf",
+            "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "sharedAt": "2026-10-15T19:30:48.101Z"
+          }
+        ],
+        "unrelatedRecordsOmitted": true
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/7dab1e55-f5e0-4b47-9834-b35adc67f5a1",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/c2af93de-8a31-4abf-9b85-c0832b3c884d",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/ec96b024-f82e-4969-b19e-dc8799a6aa77",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/4931f858-966f-48d0-988d-59c4e671e83b",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/57cda142-1b1a-4359-9458-68f573d6d9e4",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/cb2e96e5-3d44-4ce9-9f03-338c6f878acb",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/fcfe182c-eb4e-42c4-8f7e-9b460e7aef22",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/fcfe182c-eb4e-42c4-8f7e-9b460e7aef22/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/dbfcd8ac-a2fe-4777-9ac7-4dc040a65da7",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/dbfcd8ac-a2fe-4777-9ac7-4dc040a65da7/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/6141c0bb-5956-4007-b74b-327de9656370",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c467c2b9-80a8-4c7a-a583-4f307d8a1c5c",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/c0b841f0-5851-4742-b836-e97784653949",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/087b6c82-4726-4d6c-a59e-eaa7a3638547",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/96fd4e9e-9991-4ae6-9683-36727d02ad7f",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/649f694b-3c6b-41f0-8c6d-52515313a6d4",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/a5150b13-0ce1-4381-8170-d8034e569e9c",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "consoleEvents": []
+}

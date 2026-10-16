@@ -1,0 +1,622 @@
+{
+  "runId": "2026-10-15T19-22-40-558Z-api-exploration",
+  "startedAt": "2026-10-15T19:22:40.559Z",
+  "updatedAt": "2026-10-15T19:22:49.657Z",
+  "checks": [
+    {
+      "id": "API-01",
+      "title": "Invalid credentials rejected",
+      "status": "passed",
+      "durationMs": 190
+    },
+    {
+      "id": "API-02",
+      "title": "Missing and malformed bearer tokens rejected",
+      "status": "passed",
+      "durationMs": 81
+    },
+    {
+      "id": "API-03",
+      "title": "Isolated owner and viewer fixtures",
+      "status": "passed",
+      "durationMs": 2102
+    },
+    {
+      "id": "API-04",
+      "title": "Unshared room and folder denied to other documented account",
+      "status": "passed",
+      "durationMs": 1084
+    },
+    {
+      "id": "API-05",
+      "title": "Folder duplicate names case-insensitive; rename and trim",
+      "status": "passed",
+      "durationMs": 1003
+    },
+    {
+      "id": "API-06",
+      "title": "Blank folder names rejected without resource creation",
+      "status": "passed",
+      "durationMs": 82
+    },
+    {
+      "id": "API-07",
+      "title": "Foreign-room parent and upload folder rejected",
+      "status": "passed",
+      "durationMs": 426
+    },
+    {
+      "id": "API-08",
+      "title": "Upload metadata rejects unsupported MIME, zero and over-limit size",
+      "status": "passed",
+      "durationMs": 117
+    },
+    {
+      "id": "API-09",
+      "title": "Pending upload invisible and premature completion rejected",
+      "status": "failed",
+      "error": "POST /files/71695680-3783-4383-837e-29e16dd90c54/complete expected 400, actual 500\n\n500 !== 400\n",
+      "durationMs": 1885
+    },
+    {
+      "id": "API-10",
+      "title": "Resolve client upload configuration",
+      "status": "blocked",
+      "error": "Client upload configuration could not be resolved from public frontend bundle",
+      "durationMs": 231
+    },
+    {
+      "id": "API-11",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-12",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-13",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-14",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-15",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-16",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-17",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-18",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-19",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-20",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-21",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-22",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-23",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-24",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-25",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-26",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-27",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-28",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "API-29",
+      "title": "File/sharing flow prerequisite unavailable",
+      "status": "blocked",
+      "reason": "Public client upload configuration not resolved; no privileged credentials used"
+    },
+    {
+      "id": "H01",
+      "title": "Email ownership takeover hypothesis",
+      "status": "blocked",
+      "reason": "Only two existing documented accounts are authorized; an unused owned mailbox/account and account cleanup are unavailable. No account was created."
+    },
+    {
+      "id": "H03-RACE",
+      "title": "Concurrent duplicate sharing grants",
+      "status": "blocked",
+      "reason": "Concurrency experiments on shared infrastructure explicitly require additional authorization. Sequential dedup was checked."
+    },
+    {
+      "id": "H04-RACE",
+      "title": "Concurrent sibling-name collisions",
+      "status": "blocked",
+      "reason": "No concurrency experiment authorized against shared infrastructure. Sequential conflict behavior was checked."
+    },
+    {
+      "id": "H06-CEILING",
+      "title": "Actual oversized content and bucket MIME policy",
+      "status": "blocked",
+      "reason": "No dedicated bucket or configuration observability. Only metadata validation and tiny actual-size reconciliation checked; no oversized storage experiment."
+    },
+    {
+      "id": "H07-INFRA",
+      "title": "Storage cleanup failure and database rollback consistency",
+      "status": "blocked",
+      "reason": "No privileged DB/bucket access or storage failure-injection authorization. Metadata cleanup checked externally only."
+    },
+    {
+      "id": "H10-PERSISTENT",
+      "title": "Whitespace-only registration and data-room API names",
+      "status": "blocked",
+      "reason": "Creates permanent accounts/rooms with no deletion endpoint; prohibited unnecessary permanent fixtures. Folder equivalents checked."
+    },
+    {
+      "id": "API-CLEANUP",
+      "title": "Revoke created shares and remove all assessment resources",
+      "status": "passed",
+      "details": {
+        "rootsDeleted": 1,
+        "filesAbsent": 1,
+        "uniqueSharesTracked": 0
+      },
+      "durationMs": 1338
+    }
+  ],
+  "http": [
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 401,
+      "body": {
+        "message": "Invalid email or password",
+        "error": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 401,
+      "body": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 401,
+      "body": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "8b0112a7-8212-4fc9-9a8c-544f65ddcc23",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:50:27.118Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "6e230e19-f825-4dfd-9ce4-72639f7f93da",
+        "name": "qa-viewer-2026-10-15T19-22-40-558Z-api-exploration",
+        "parentId": null,
+        "dataRoomId": "8b0112a7-8212-4fc9-9a8c-544f65ddcc23",
+        "createdAt": "2026-10-15T19:22:43.242Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "3bf1882a-652a-4e78-ba82-6afad35faaac",
+        "name": "qa-api-2026-10-15T19-22-40-558Z-api-exploration",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:22:43.577Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "4c53e357-af31-41d2-9bf2-0f8c23e42754",
+        "name": "Source",
+        "parentId": "3bf1882a-652a-4e78-ba82-6afad35faaac",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:22:43.967Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "adfaa503-b28c-4c6f-9bec-602d5451d642",
+        "name": "Destination",
+        "parentId": "3bf1882a-652a-4e78-ba82-6afad35faaac",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:22:44.361Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "e6e6c4a0-1c2f-4966-92c3-7bbc8af18137",
+        "name": "Nested",
+        "parentId": "4c53e357-af31-41d2-9bf2-0f8c23e42754",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:22:44.751Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms/05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/3bf1882a-652a-4e78-ba82-6afad35faaac/contents",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/3bf1882a-652a-4e78-ba82-6afad35faaac/breadcrumbs",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 409,
+      "body": {
+        "message": "A folder named \"source\" already exists here",
+        "error": "Conflict",
+        "statusCode": 409
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/folders/adfaa503-b28c-4c6f-9bec-602d5451d642",
+      "status": 200,
+      "body": {
+        "id": "adfaa503-b28c-4c6f-9bec-602d5451d642",
+        "name": "Destination renamed",
+        "parentId": "3bf1882a-652a-4e78-ba82-6afad35faaac",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:22:44.361Z"
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/folders/adfaa503-b28c-4c6f-9bec-602d5451d642",
+      "status": 409,
+      "body": {
+        "message": "A folder named \"SOURCE\" already exists here",
+        "error": "Conflict",
+        "statusCode": 409
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 400,
+      "body": {
+        "message": [
+          "Enter a folder name"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/folders/4c53e357-af31-41d2-9bf2-0f8c23e42754",
+      "status": 400,
+      "body": {
+        "message": [
+          "Enter a folder name"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 404,
+      "body": {
+        "message": "Parent folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "Only PDF files are supported"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "size must not be less than 1"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 400,
+      "body": {
+        "message": [
+          "File exceeds the 50 MB limit"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "71695680-3783-4383-837e-29e16dd90c54",
+        "name": "pending.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/4c53e357-af31-41d2-9bf2-0f8c23e42754/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "folder",
+            "id": "e6e6c4a0-1c2f-4966-92c3-7bbc8af18137",
+            "name": "Nested",
+            "parentId": "4c53e357-af31-41d2-9bf2-0f8c23e42754",
+            "createdAt": "2026-10-15T19:22:44.751Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/71695680-3783-4383-837e-29e16dd90c54",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/71695680-3783-4383-837e-29e16dd90c54/view-url",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/71695680-3783-4383-837e-29e16dd90c54/download-url",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/71695680-3783-4383-837e-29e16dd90c54/complete",
+      "status": 500,
+      "body": {
+        "message": "Could not verify the upload",
+        "error": "Internal Server Error",
+        "statusCode": 500
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/3bf1882a-652a-4e78-ba82-6afad35faaac",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/3bf1882a-652a-4e78-ba82-6afad35faaac/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/6e230e19-f825-4dfd-9ce4-72639f7f93da",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/6e230e19-f825-4dfd-9ce4-72639f7f93da/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/71695680-3783-4383-837e-29e16dd90c54",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "consoleEvents": []
+}

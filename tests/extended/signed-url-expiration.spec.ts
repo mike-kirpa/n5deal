@@ -1,0 +1,33 @@
+import { setTimeout as wait } from 'node:timers/promises';
+import { test, expect } from '../../fixtures/qa';
+import { requireStatus } from '../../helpers/api';
+import { fileReads, signedExpiryMilliseconds } from '../../helpers/revocation';
+import { pdf } from '../../helpers/shared.cjs';
+import { expirationOutcome } from '../../helpers/result-policy.cjs';
+
+test('opt-in signed view URL denies fresh byte access after its issued expiration', async ({ assessment: s, apis, evidence }) => {
+  test.setTimeout(450_000);
+  const bytes = pdf('Opt-in expiration');
+  const file = await s.upload('expiration.pdf', s.root.id, bytes);
+  const grant = await s.share('FILE', file.id);
+  const issued = requireStatus(await apis.viewer.send<{ url: string }>('GET', `/files/${file.id}/view-url`), 200);
+  const expiry = signedExpiryMilliseconds(issued.url);
+  const initial = await apis.anonymous.download(issued.url, true);
+  expect(initial.status).toBe(200); expect(initial.bytes.equals(bytes)).toBe(true);
+  await s.revoke(grant.id); await fileReads(apis.viewer, file.id, 404);
+  const immediate = await apis.anonymous.download(issued.url, true);
+  if (immediate.status === 200) expect(immediate.bytes.equals(bytes)).toBe(true);
+  else expect(immediate.status).toBeGreaterThanOrEqual(400);
+  const waitMs = Math.max(0, expiry + 30_000 - Date.now());
+  evidence.record({ observation: 'Opt-in expiration wait from URL exp claim; no URL/token persisted', expiresAt: new Date(expiry).toISOString(), waitMs, immediateStatus: immediate.status });
+  await wait(waitMs);
+  const expired = await apis.anonymous.download(issued.url, true);
+  const freshResponse = await apis.owner.send<{ url: string }>('GET', `/files/${file.id}/view-url`);
+  if (freshResponse.status !== 200) throw new Error('EnvironmentError: expiration positive-control URL unavailable');
+  const fresh = freshResponse.body;
+  const control = await apis.anonymous.download(fresh.url, true);
+  const outcome = expirationOutcome(expired.status, control.status, control.bytes.equals(bytes));
+  evidence.record({ observation: 'After issued expiry plus 30-second margin, with fresh Owner URL positive control', status: expired.status, controlStatus: control.status, controlMatches: control.bytes.equals(bytes), outcome });
+  if (outcome === 'inconclusive') throw new Error('EnvironmentError: expiration could not be distinguished from storage availability failure');
+  expect(outcome).toBe('denied');
+});

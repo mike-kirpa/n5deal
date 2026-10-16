@@ -1,0 +1,443 @@
+{
+  "runId": "2026-10-15T19-28-09-220Z-browser-exploration",
+  "startedAt": "2026-10-15T19:28:09.221Z",
+  "updatedAt": "2026-10-15T19:29:54.244Z",
+  "checks": [
+    {
+      "id": "UI-01",
+      "title": "Invalid browser login displays error without navigation",
+      "status": "passed",
+      "durationMs": 707
+    },
+    {
+      "id": "UI-02",
+      "title": "Valid browser login and own isolated folder",
+      "status": "passed",
+      "durationMs": 1303
+    },
+    {
+      "id": "UI-03",
+      "title": "Blank folder name form validation",
+      "status": "passed",
+      "durationMs": 219
+    },
+    {
+      "id": "UI-04",
+      "title": "Create nested folder through browser",
+      "status": "failed",
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: 'New folder', exact: true }) resolved to 2 elements:\n    1) <button tabindex=\"0\" type=\"button\" data-slot=\"button\" class=\"group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 …>…</button> aka getByRole('button', { name: 'New folder' }).first()\n    2) <button tabindex=\"0\" type=\"button\" data-slot=\"button\" class=\"group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 …>…</button> aka getByRole('button', { name: 'New folder' }).nth(1)\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'New folder', exact: true })\u001b[22m\n",
+      "durationMs": 14
+    },
+    {
+      "id": "UI-05",
+      "title": "Rename folder through row action",
+      "status": "failed",
+      "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Actions for UI child', exact: true })\u001b[22m\n",
+      "durationMs": 10014
+    },
+    {
+      "id": "UI-06",
+      "title": "Duplicate folder displays conflict",
+      "status": "failed",
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: 'New folder', exact: true }) resolved to 2 elements:\n    1) <button tabindex=\"0\" type=\"button\" data-slot=\"button\" class=\"group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 …>…</button> aka getByRole('button', { name: 'New folder' }).first()\n    2) <button tabindex=\"0\" type=\"button\" data-slot=\"button\" class=\"group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 …>…</button> aka getByRole('button', { name: 'New folder' }).nth(1)\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'New folder', exact: true })\u001b[22m\n",
+      "durationMs": 14
+    },
+    {
+      "id": "UI-07",
+      "title": "Nested navigation, breadcrumbs, deep-link refresh and session persistence",
+      "status": "failed",
+      "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('cell', { name: 'UI renamed', exact: true })\u001b[22m\n",
+      "durationMs": 10004
+    },
+    {
+      "id": "UI-08",
+      "title": "Folder rows offer a keyboard-focusable open action",
+      "status": "failed",
+      "error": "locator.evaluate: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('row').filter({ has: getByRole('cell', { name: 'UI renamed', exact: true }) })\u001b[22m\n",
+      "durationMs": 10007
+    },
+    {
+      "id": "UI-09",
+      "title": "Unsupported upload type displays validation error",
+      "status": "passed",
+      "durationMs": 32
+    },
+    {
+      "id": "UI-10",
+      "title": "Multiple valid PDFs finish upload and appear in listing",
+      "status": "passed",
+      "details": {
+        "storagePUTs": [
+          200,
+          200
+        ],
+        "completionResponses": [
+          {
+            "endpoint": "/files/adf8b749-7d99-4034-90b2-dbd48911205d/complete",
+            "status": 201
+          },
+          {
+            "endpoint": "/files/308643b7-4ca5-4474-bdd0-f8b3794de929/complete",
+            "status": 201
+          }
+        ],
+        "publicUploadKeyObserved": true
+      },
+      "durationMs": 3165
+    },
+    {
+      "id": "UI-11",
+      "title": "Download completed PDF preserves filename",
+      "status": "passed",
+      "durationMs": 1091
+    },
+    {
+      "id": "UI-12",
+      "title": "PDF viewer opens and closes to source folder",
+      "status": "failed",
+      "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Close', exact: true })\u001b[22m\n",
+      "durationMs": 11519
+    },
+    {
+      "id": "UI-13",
+      "title": "Rename and move uploaded PDF through browser",
+      "status": "blocked",
+      "reason": "Deferred to follow-up script after initial browser observations"
+    },
+    {
+      "id": "UI-14",
+      "title": "Injected completion failure recovery",
+      "status": "blocked",
+      "reason": "Deferred to focused reproduction; no storage failures injected"
+    },
+    {
+      "id": "UI-15",
+      "title": "Share folder using browser; Viewer sees read-only descendants",
+      "status": "failed",
+      "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('cell', { name: 'UI renamed', exact: true }) to be visible\u001b[22m\n",
+      "durationMs": 32423
+    },
+    {
+      "id": "UI-16",
+      "title": "Delete preview error does not permit unqualified destructive action",
+      "status": "failed",
+      "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Actions for UI renamed', exact: true })\u001b[22m\n",
+      "durationMs": 10004
+    },
+    {
+      "id": "UI-17",
+      "title": "Session account switch clears owner cache",
+      "status": "failed",
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('cell', { name: 'UI renamed', exact: true }) to be visible\u001b[22m\n",
+      "durationMs": 10458
+    },
+    {
+      "id": "UI-18",
+      "title": "Fresh protected navigation rejects an invalid session token",
+      "status": "passed",
+      "details": {
+        "actualExpiry": "invalid token simulation; no clock/secret manipulation"
+      },
+      "durationMs": 207
+    },
+    {
+      "id": "UI-CLEANUP",
+      "title": "Browser assessment shares and folders cleaned up",
+      "status": "passed",
+      "details": {
+        "pendingOrUploadedIntentIdsTracked": 2,
+        "rootDeleted": true
+      },
+      "durationMs": 1273
+    }
+  ],
+  "http": [
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "body": {
+        "accessToken": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "02ec1bea-d391-4dc4-8b31-91a3a76e36dd",
+        "name": "qa-browser-2026-10-15T19-28-09-220Z-browser-exploration",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-15T19:28:11.765Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 401,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL REDACTED]",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/adf8b749-7d99-4034-90b2-dbd48911205d/complete",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/308643b7-4ca5-4474-bdd0-f8b3794de929/complete",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd/contents",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "type": "file",
+            "id": "308643b7-4ca5-4474-bdd0-f8b3794de929",
+            "name": "browser-one.pdf",
+            "folderId": "02ec1bea-d391-4dc4-8b31-91a3a76e36dd",
+            "size": 590,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:28:44.878Z"
+          },
+          {
+            "type": "file",
+            "id": "adf8b749-7d99-4034-90b2-dbd48911205d",
+            "name": "browser-two.pdf",
+            "folderId": "02ec1bea-d391-4dc4-8b31-91a3a76e36dd",
+            "size": 590,
+            "mimeType": "application/pdf",
+            "createdAt": "2026-10-15T19:28:44.793Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/308643b7-4ca5-4474-bdd0-f8b3794de929/download-url",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/308643b7-4ca5-4474-bdd0-f8b3794de929",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms/05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/308643b7-4ca5-4474-bdd0-f8b3794de929/view-url",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd/breadcrumbs",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd/contents",
+      "status": 200,
+      "via": "browser"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/auth/me",
+      "status": 401,
+      "via": "browser"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/d7e10035-1d97-4c79-8561-35a4cb8a10ab",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd",
+      "status": 204,
+      "body": {
+        "contentType": "unknown"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/02ec1bea-d391-4dc4-8b31-91a3a76e36dd/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "consoleEvents": [
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 401 ()"
+    },
+    {
+      "kind": "console.error",
+      "text": "Failed to load resource: the server responded with a status of 401 ()"
+    }
+  ]
+}

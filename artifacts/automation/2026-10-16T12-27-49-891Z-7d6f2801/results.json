@@ -1,0 +1,624 @@
+{
+  "runId": "2026-10-16T12-27-49-891Z-7d6f2801",
+  "endedAt": "2026-10-16T12:32:24.097Z",
+  "runnerStatus": "passed",
+  "effectiveStatus": "passed",
+  "counts": {
+    "passed": 36
+  },
+  "globalErrors": [],
+  "tests": [
+    {
+      "title": "USER folder revocation denies all fresh file reads while an old signed URL is observed separately",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 14376,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\1-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "file PUBLIC_LINK revocation rejects all token routes without revoking an independent USER grant",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 17463,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\2-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "revoking a folder grant preserves direct file reads until the independent file grant is revoked",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 16875,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\3-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "both documented accounts authenticate and resolve their own identity",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 251,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "not-needed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\4-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "invalid credentials return an actionable 401",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 195,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "not-needed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\5-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "missing and invalid tokens cannot access protected assessment resources",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1743,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\6-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "upload intent size: 1 byte (metadata only)",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 4801,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\7-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "upload intent size: 50 MiB minus 1",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2757,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\8-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "upload intent size: exactly 50 MiB",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2803,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\9-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "upload intent size: negative",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1252,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\10-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "upload intent size: fractional",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1273,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\11-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "upload intent size: non-numeric",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1279,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\12-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "upload intent rejects image/png",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1246,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\13-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "upload intent rejects missing MIME",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1243,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\14-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "characterize non-PDF filename extension separately from declared PDF MIME",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2298,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\15-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "characterize actual content: non-PDF bytes with PDF name and MIME",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 6942,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\16-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "characterize actual content: corrupted PDF with PDF name and MIME",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 7734,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\17-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "completion records actual small PDF size when declared size differs by -11",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 6667,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\18-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "completion records actual small PDF size when declared size differs by 11",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 7271,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\19-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "nested folders retain hierarchy, validate names and delete recursively",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 4790,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\20-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "pending files stay invisible and invalid declared uploads are rejected",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 3822,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\21-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "PDF lifecycle preserves bytes, resolves conflicts, moves and deletes metadata",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 12442,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\22-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "cursor pagination crosses the folder/file seam exactly once per item",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 10044,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\23-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "folder grants inherit downwards without exposing ancestors or permitting writes",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 10303,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\24-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "file mutation denial, overlapping grants and moves use current inheritance",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 16970,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\25-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "public tokens are read-only subtree capabilities and fresh access stops on revoke",
+      "project": "api",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 10914,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\26-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "an opened PDF is observed after direct USER revocation; fresh download and reload are denied",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 15932,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\27-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "folder and PDF tabs distinguish cached content from fresh access after inherited revocation",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 21647,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\28-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "a download URL authorized before revocation can finish under a client-local response delay; the next request is denied",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 14173,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\29-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "browser rejects declared text/plain before upload intent",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2849,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\30-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "browser rejects declared image/png before upload intent",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2858,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\31-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "browser falls back to PDF extension when file MIME is empty",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 5613,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\32-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "characterize browser extension policy with a valid PDF and declared PDF MIME",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 5501,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\33-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "Owner logs in, creates a folder, uploads and opens a PDF, then downloads it",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 13196,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\34-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "Owner shares in the UI; an independent Viewer context browses read-only descendants",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 17211,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\35-sanitized-evidence.json"
+        }
+      ]
+    },
+    {
+      "title": "Logout removes the session; switching to Viewer does not reuse Owner content or permissions",
+      "project": "chromium",
+      "classification": "passed",
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 5511,
+      "bugs": [],
+      "errors": [],
+      "cleanup": "passed",
+      "attachments": [
+        {
+          "name": "sanitized-evidence",
+          "path": "artifacts\\automation\\2026-10-16T12-27-49-891Z-7d6f2801\\attachments\\36-sanitized-evidence.json"
+        }
+      ]
+    }
+  ]
+}

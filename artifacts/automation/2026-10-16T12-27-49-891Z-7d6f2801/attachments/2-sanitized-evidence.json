@@ -1,0 +1,436 @@
+{
+  "events": [
+    {
+      "method": "GET",
+      "endpoint": "/data-rooms",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+            "name": "My Data Room",
+            "createdAt": "2026-10-15T14:45:31.815Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/folders",
+      "status": 201,
+      "body": {
+        "id": "c4c1e0a8-fe4d-4c3e-8a3d-1d31feccdd0c",
+        "name": "qa-auto-2026-10-16T12-27-49-891Z-7d6f2801-6ed12741",
+        "parentId": null,
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "createdAt": "2026-10-16T12:28:05.156Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/c4c1e0a8-fe4d-4c3e-8a3d-1d31feccdd0c/contents",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "observation": "client upload header observed; probe PUT cancelled locally",
+      "visibleProbeFiles": 0
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/upload-intent",
+      "status": 201,
+      "body": {
+        "fileId": "b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+        "name": "public-revocation.pdf",
+        "uploadUrl": "[REDACTED]"
+      }
+    },
+    {
+      "method": "PUT",
+      "endpoint": "[signed upload URL omitted]",
+      "status": 200,
+      "byteCount": 598
+    },
+    {
+      "method": "POST",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/complete",
+      "status": 201,
+      "body": {
+        "id": "b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+        "name": "public-revocation.pdf",
+        "folderId": "c4c1e0a8-fe4d-4c3e-8a3d-1d31feccdd0c"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "b7e78919-c691-481e-ad45-6b413a3fdeb4",
+        "resourceType": "FILE",
+        "resourceId": "b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+        "mode": "USER",
+        "token": "[REDACTED]",
+        "granteeEmail": "viewer@example.com",
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-16T12:28:09.328Z"
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "182056ee-edf4-4488-ba02-6a832df33b73",
+        "resourceType": "FILE",
+        "resourceId": "b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+        "mode": "PUBLIC_LINK",
+        "token": "[REDACTED]",
+        "granteeEmail": null,
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-16T12:28:09.795Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]",
+      "status": 200,
+      "body": {
+        "resourceType": "FILE",
+        "resourceId": "b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+        "resourceName": "public-revocation.pdf",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "size": 598,
+        "mimeType": "application/pdf"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+      "status": 200,
+      "body": {
+        "id": "b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+        "name": "public-revocation.pdf",
+        "size": 598,
+        "mimeType": "application/pdf"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/view-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]",
+      "status": 404,
+      "body": {
+        "message": "Link not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/view-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/download-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/182056ee-edf4-4488-ba02-6a832df33b73",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/view-url",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/download-url",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "POST",
+      "endpoint": "/shares",
+      "status": 201,
+      "body": {
+        "id": "798ef460-54bf-42e9-beb6-55e6f323482b",
+        "resourceType": "FILE",
+        "resourceId": "b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+        "mode": "PUBLIC_LINK",
+        "token": "[REDACTED]",
+        "granteeEmail": null,
+        "createdById": "69a55e19-695a-49fc-ad8e-5044f4f07b63",
+        "revokedAt": null,
+        "createdAt": "2026-10-16T12:28:14.856Z"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]",
+      "status": 410,
+      "body": {
+        "message": "This link has been revoked",
+        "error": "Gone",
+        "statusCode": 410
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/public/[REDACTED]",
+      "status": 200,
+      "body": {
+        "resourceType": "FILE",
+        "resourceId": "b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+        "resourceName": "public-revocation.pdf",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339",
+        "size": 598,
+        "mimeType": "application/pdf"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+      "status": 200,
+      "body": {
+        "id": "b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+        "name": "public-revocation.pdf",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "folderId": "c4c1e0a8-fe4d-4c3e-8a3d-1d31feccdd0c",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/view-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+      "status": 200,
+      "body": {
+        "id": "b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+        "name": "public-revocation.pdf",
+        "size": 598,
+        "mimeType": "application/pdf",
+        "folderId": "c4c1e0a8-fe4d-4c3e-8a3d-1d31feccdd0c",
+        "dataRoomId": "05f75e29-a0ca-4ff8-ada6-9c4ac8703339"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/view-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/download-url",
+      "status": 200,
+      "body": {
+        "url": "[REDACTED]"
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/798ef460-54bf-42e9-beb6-55e6f323482b",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/shares/b7e78919-c691-481e-ad45-6b413a3fdeb4",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/view-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f/download-url",
+      "status": 404,
+      "body": {
+        "message": "Resource not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FOLDER&resourceId=c4c1e0a8-fe4d-4c3e-8a3d-1d31feccdd0c&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=0f28ba49-9b2d-46f7-b13f-974bff4c05b7&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/shares?resourceType=FILE&resourceId=b0bcfe3d-a160-405b-a8e4-d94151a5860f&limit=100",
+      "status": 200,
+      "body": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/folders/c4c1e0a8-fe4d-4c3e-8a3d-1d31feccdd0c",
+      "status": 204,
+      "body": null
+    },
+    {
+      "method": "GET",
+      "endpoint": "/folders/c4c1e0a8-fe4d-4c3e-8a3d-1d31feccdd0c/contents",
+      "status": 404,
+      "body": {
+        "message": "Folder not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/0f28ba49-9b2d-46f7-b13f-974bff4c05b7",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "method": "GET",
+      "endpoint": "/files/b0bcfe3d-a160-405b-a8e4-d94151a5860f",
+      "status": 404,
+      "body": {
+        "message": "File not found",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    }
+  ],
+  "cleanup": {
+    "status": "passed",
+    "errors": [],
+    "root": "c4c1e0a8-fe4d-4c3e-8a3d-1d31feccdd0c",
+    "filesVerifiedAbsent": 2
+  }
+}
